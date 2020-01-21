@@ -67,20 +67,25 @@
           <div class="card-body contact text-center h-100 white-text light-blue darken-2">
             <h3 class="my-4 pb-2">Contact information</h3>
             <ul class="text-lg-left list-unstyled ml-4">
-              <li><p><i class="fas fa-map-marker-alt pr-2 white-text"></i>Jakarta, 12640 INA</p></li>
-              <li><p><i class="fas fa-phone pr-2 white-text"></i>+ 62 217 864 727 / Ext : 581</p></li>
-              <li><p><i class="fas fa-envelope pr-2 white-text"></i>info@it.ffup.org</p></li>
+              <li><p><i class="fas fa-map-marker-alt pr-2 white-text"></i>Jakarta, 12640 Indonesia</p></li>
+              <li><p><i class="fas fa-phone pr-2 white-text"></i>+62-217-864-727 / Ext : 581</p></li>
+              <li><p><i class="fas fa-envelope pr-2 white-text"></i>ict@ffup.org</p></li>
             </ul>
             <hr class="hr-light my-4">
             <ul class="list-inline text-center list-unstyled">
+              
               <li class="list-inline-item">
-                <a class="p2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
+                <a href="#" class="p2 fa-lg fb-ic"><i class="fab fa-facebook white-text"> </i></a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#" class="p2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
               </li>
               <li class="list-inline-item">
-                <a class="p2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
+                <a href="#" class="p2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
               </li>
               <li class="list-inline-item">
-                <a class="p2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
+                <a href="#" class="p2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
               </li>
             </ul>
 
