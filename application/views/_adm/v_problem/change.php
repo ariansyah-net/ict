@@ -96,7 +96,7 @@
 <div class="form-group row">
 <?= form_label('Note', 'h', ['class' => 'col-sm-2 col-form-label']) ?>
 <div class="col-sm-5">
-<textarea class="form-control" rows="2" name="h"></textarea>
+<textarea class="form-control" rows="2" name="h"><?= $ar['information'] ?></textarea>
 </div>
 </div>
 
