@@ -44,10 +44,10 @@
         <h5 class="title font-weight-bold mb-4">INFO TERBARU</h5>
         <ul class="list-unstyled">
           <li>
-            <p><a href="http://localhost/ict4/home/page/instruksi-kerja-sistem-informasi-kepegawaian"><i class="fas fa-caret-right"></i> Instruksi Kerja Sistem Kepegawaian</a></p>
-            <p><a href=""><i class="fas fa-caret-right"></i> Rilis Program OPIT Versi 4.0</a></p>
-            <p><a href=""><i class="fas fa-caret-right"></i> Program Kerja ICT Tahun Akademik 2019/2020</a></p>
-            <p><a href=""><i class="fas fa-caret-right"></i> Instruksi Kerja Sistem Tata Usaha</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Instruksi Kerja Sistem Kepegawaian</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Rilis Program OPIT Versi 4.0</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Program Kerja ICT Tahun Akademik 2019/2020</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Instruksi Kerja Sistem Tata Usaha</a></p>
           </li>
         </ul>
       </div>

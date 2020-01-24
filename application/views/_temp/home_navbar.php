@@ -28,16 +28,14 @@
                   }
               ?>
             </ul>
-          </div>
-
   <?php
     $is_login = $this->session->userdata('is_login');
     $name     = $this->session->userdata('nama_admin');
     $avatar   = $this->session->userdata('avatar');
   ?>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-  <ul class="navbar-nav ml-auto">
+<ul class="navbar-nav ml-auto nav-flex-icons">
+
     <?php if ($is_login): ?>
     <li class="nav-item avatar dropdown">
     <a class="nav-link dropdown-toggle" id="nav1" data-toggle="dropdown"
@@ -53,16 +51,12 @@
 
   <?php else: ?>
     <li class="nav-item">
-       <a class="nav-link" href="<?=base_url('login')?>">
+       <a class="nav-link waves-effect waves-light" href="<?=base_url('login')?>">
        <i class="fas fa-user"></i> Login</a>
      </li>
-
-
   </ul>
 </div>
-
-<?php endif ?>
-
-        </div>
-      </div>
-    </nav>
+    <?php endif ?>
+    </div>
+  </div>
+</nav>
