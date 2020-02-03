@@ -37,54 +37,59 @@
                    </div>
                  </li>
 
-                 <!-- Nav Item - Alerts -->
-                 <li class="nav-item dropdown no-arrow mx-1">
-                   <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <i class="fas fa-bell fa-fw"></i>
-                     <!-- Counter - Alerts -->
-                     <span class="badge badge-danger badge-counter">3+</span>
-                   </a>
-                   <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  User Problem
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
+                 
+
+<!-- ========= PROBLEM NOTIFICATION ================ -->
+
+<li class="nav-item dropdown no-arrow mx-1">
+  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <?php $prob = $this->db->query("SELECT * FROM it_problems WHERE problem_read='0'")->num_rows(); ?>
+    <i class="fas fa-bell fa-fw"></i>
+    <span class="badge badge-danger badge-counter"><?php echo $prob; ?></span>
+  </a>
+             
+
+          <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header"><i class="fa fa-users"></i> User Problem</h6>
+
+             <?php
+              $problem = $this->it->new_problem(4);
+              foreach ($problem->result_array() as $row) {
+                $problemUser = substr($row['title_problem'],0,35);
+                // $problemDate = cek_terakhir($row['date'].' '.$row['period']);
+                if ($row['problem_read']=='0'){ $bold = 'font-weight-bold'; }else{ $bold = ''; }
+
+                if($row < 0){
+                  echo "Everything is OK";
+                }else{
+
+            echo "
+                  <a class='dropdown-item d-flex align-items-center' href='".base_url()."dashboard/change_problem/$row[id_problem]'>
+                  <div class='dropdown-list-image mr-3'>
+                  ";
+                    
+                    if($row['avatar'] == ''){
+                      echo "<img class='rounded-circle' src='".base_url()."arians/photos/whois.png'>";
+                    }else{
+                      echo "<img class='rounded-circle' src='".base_url()."arians/photos/$row[avatar]'>";
+                    }
+                    
+                  echo "
+                  <div class='status-indicator bg-danger'></div>
                   </div>
+
                   <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  <span class='$bold'>$problemUser</span>
+                  <div class='small text-gray-500'>$row[first_name] $row[last_name] - $row[date]</div>
                   </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Problem</a>
-              </div>
-            </li>
+                  </a>";
+                }
+              }
+            ?>
+          <a class="dropdown-item text-center small text-gray-500" href="<?=base_url('dashboard/problem')?>">Show All Problem
+        </a>
+      </div>
+    </li>
 
 
 
@@ -93,8 +98,8 @@
 
 
 
+<!-- ========= INBOX NOTIFICATION ================ -->
 
-<!--  oke fix -->
       <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-envelope fa-fw"></i>

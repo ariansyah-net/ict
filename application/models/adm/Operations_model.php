@@ -1,9 +1,13 @@
 <?php class Operations_model extends MY_model{
 
-// ================ INBOX MESSAGE =====================
+// ================ INBOX NOTIF NAVBAR =====================
     function new_message($limit){
       return $this->db->query("SELECT * FROM it_inbox ORDER BY id_inbox DESC LIMIT $limit");
     }
+// ================ PROBLEM NOTIF NAVBAR =====================
+    function new_problem($limit){
+      return $this->db->query("SELECT * FROM it_problems a JOIN it_users b ON a.id_users=b.id_users ORDER BY id_problem DESC LIMIT $limit");
+    }    
 
 // ================ USERS ==============================
     function load_users(){

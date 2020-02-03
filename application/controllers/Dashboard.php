@@ -376,6 +376,7 @@ class Dashboard extends MY_Controller
     }
     function change_problem() {
       $id = $this->uri->segment(3);
+      $this->db->query("UPDATE it_problems SET problem_read='1' WHERE id_problem='$id'");
       if (isset($_POST['submit'])){
         $this->it->update_problem();
         $this->session->set_flashdata('info','<i class="fas fa-exclamation-circle"></i> Okey data has been changed..');
