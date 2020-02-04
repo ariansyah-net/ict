@@ -137,16 +137,19 @@
     </li>
 
     <div class="topbar-divider d-none d-sm-block"></div>
-
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-          <?= $this->session->userdata('nama_admin'); ?></span>
-        <img class="img-profile rounded-circle" alt="ICT" src="<?= base_url('arians/img/'.$this->session->userdata['avatar'].' ') ?>">
-      </a>
+          <?= $this->session->userdata('first_name'); ?></span>
+            <?php if($this->session->userdata['avatar'] == '') : ?>
+              <img class="img-profile rounded-circle" alt="No Image" src="<?= base_url('arians/img/whois.png') ?>">
+                <?php else: ?>
+                  <img class="img-profile rounded-circle" alt="OPIT" src="<?= base_url('arians/photos/'.$this->session->userdata['avatar'].' ') ?>">
+                    <?php endif ?>
+                      </a>
       <!-- Dropdown - User Information -->
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="<?=base_url('dashboard/change_author/'.$this->session->userdata['id_admin'].' ')?>">
+        <a class="dropdown-item" href="<?=base_url('dashboard/change_author/'.$this->session->userdata['id_users'].' ')?>">
           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
           Profile
         </a>

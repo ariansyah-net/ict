@@ -30,7 +30,7 @@
             </ul>
   <?php
     $is_login = $this->session->userdata('is_login');
-    $name     = $this->session->userdata('nama_admin');
+    $name     = $this->session->userdata('first_name');
     $avatar   = $this->session->userdata('avatar');
   ?>
 
