@@ -535,7 +535,8 @@
                     'l_os'           => $this->db->escape_str($this->input->post('u')),
                     'status'         => $this->db->escape_str($this->input->post('v')),
                     'note'           => $this->db->escape_str($this->input->post('note')),
-                    'author'         => $this->db->escape_str($this->input->post('author')),
+                    // 'author'      => $this->db->escape_str($this->input->post('author')),
+                    'author'         => $this->session->userdata('first_name'),
                     'last_update'    => date('Y-m-d H:i:s')
 
                     );
@@ -569,7 +570,8 @@
                     'l_os'           => $this->db->escape_str($this->input->post('u')),
                     'status'         => $this->db->escape_str($this->input->post('v')),
                     'note'           => $this->db->escape_str($this->input->post('note')),
-                    'author'         => $this->db->escape_str($this->input->post('author')),
+                    // 'author'      => $this->db->escape_str($this->input->post('author')),
+                    'author'         => $this->session->userdata('first_name'),
                     'last_update'    => date('Y-m-d H:i:s')
 
                     );

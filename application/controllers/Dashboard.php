@@ -13,7 +13,7 @@ class Dashboard extends MY_Controller
     {
       $isLogin = $this->session->userdata('is_login');
       if(!$isLogin){
-          redirect('login');
+          redirect('auth');
       }
     }
 

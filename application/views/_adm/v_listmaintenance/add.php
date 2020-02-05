@@ -298,12 +298,12 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Status PC </strong>', 'v') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="vgood" name="v" class="custom-control-input">
-         <?= form_label('Good', 'vgood', ['class' => 'custom-control-label']) ?>
+         <input type="radio" value="Ok" id="vok" name="v" class="custom-control-input">
+         <?= form_label('Ok', 'vok', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Problem" id="vproblem" name="v" class="custom-control-input">
-         <?= form_label('Problem', 'vproblem', ['class' => 'custom-control-label']) ?>
+         <input type="radio" value="Maintenance" id="vmaintenance" name="v" class="custom-control-input">
+         <?= form_label('Maintenance', 'vmaintenance', ['class' => 'custom-control-label']) ?>
          </div>
          </div>
        </div>

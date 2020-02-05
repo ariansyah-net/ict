@@ -45,7 +45,7 @@
     <?= $name; ?> <i class="fas fa-caret-down fa-xs"></i> </a>
     <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
     <a class="dropdown-item" href="<?=base_url('dashboard/')?>"> Profil Saya</a>
-    <a class="dropdown-item" href="<?=base_url('login/logout')?>"> Keluar Aplikasi</a>
+    <a class="dropdown-item" href="<?=base_url('auth/logout')?>"> Keluar Aplikasi</a>
     </div>
     </li>
 
