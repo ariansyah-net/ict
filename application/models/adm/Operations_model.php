@@ -83,7 +83,11 @@
                                     'id_room'         =>$this->db->escape_str($this->input->post('j')),
                                     'is_active'       =>$this->db->escape_str($this->input->post('k')),
                                     'info'            =>$this->db->escape_str($this->input->post('l')),
-                                    'unique_user'     =>$this->db->escape_str($this->input->post('m'))
+                                    'unique_user'     =>$this->db->escape_str($this->input->post('m')),
+                                    'username'        =>$this->db->escape_str($this->input->post('n')),
+                                    'password'        =>password_hash($this->input->post('o'), PASSWORD_DEFAULT),
+                                    'role_id'         =>2,
+                                    'last_update'     =>date('Y-m-d H:i:s')
                                     );
             }else{
                     $datadb = array('first_name'      =>$this->db->escape_str($this->input->post('a')),
@@ -98,7 +102,11 @@
                                     'id_room'         =>$this->db->escape_str($this->input->post('j')),
                                     'is_active'       =>$this->db->escape_str($this->input->post('k')),
                                     'info'            =>$this->db->escape_str($this->input->post('l')),
-                                    'unique_user'     =>$this->db->escape_str($this->input->post('m'))
+                                    'unique_user'     =>$this->db->escape_str($this->input->post('m')),
+                                    'username'        =>$this->db->escape_str($this->input->post('n')),
+                                    'password'        =>password_hash($this->input->post('o'), PASSWORD_DEFAULT),
+                                    'role_id'         =>2,
+                                    'last_update'     =>date('Y-m-d H:i:s')
                                   );
             }
         $this->db->where('id_users',$this->input->post('id'));

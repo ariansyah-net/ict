@@ -8,8 +8,12 @@ class Login extends MY_Controller
         $this->load->model('Login_model', 'login', true);
     }
 
-	public function index()
+    public function index()
     {
+        if ($this->session->userdata('is_login')) {
+            redirect('dashboard');
+        }
+
         if (!$_POST) {
             $input = (object) $this->login->getDefaultValues();
         } else {
@@ -31,12 +35,12 @@ class Login extends MY_Controller
             $this->session->set_flashdata('danger', 'Upss.. username or password incorrect. !');
         }
         redirect('login');
-	}
+    }
 
-  	public function logout()
-  	{
+    public function logout()
+    {
       $this->login->logout();
       redirect(base_url());
-  	}
+    }
 
 }

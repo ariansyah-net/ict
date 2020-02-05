@@ -6,7 +6,7 @@
     <a class="nav-link" id="topnav-tab" data-toggle="tab" href="#topnav" role="tab" aria-controls="topnav" aria-selected="false">Office</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">About</a>
+    <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Account</a>
   </li>
 </ul>
 <!-- =========================TAB 1=================================== -->
@@ -21,45 +21,41 @@
     <div class="card-body">
 
 
-
-
-
-
 <?= form_open_multipart('dashboard/change_users') ?>
 <?= form_hidden('id', $rows['id_users'])?>
 
 <!-- <input type='hidden' name='id' value='$rows[id_event]'> -->
 <!-- FIRST NAME -->
     <div class="form-group row">
-    <?= form_label('First Name :', 'first_name', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('First Name', 'first_name', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
     <?= form_input('a', $rows['first_name'], ['class' => 'form-control', 'required' => 'required']) ?>
     </div>
     </div>
 <!-- LAST NAME -->
     <div class="form-group row">
-    <?= form_label('Last Name :', 'last_name', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Last Name', 'last_name', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
     <?= form_input('b', $rows['last_name'], ['class' => 'form-control']) ?>
     </div>
     </div>
 <!-- EMAIL -->
     <div class="form-group row">
-    <?= form_label('Email :', 'email', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Email', 'email', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
     <?= form_input('c', $rows['email'], ['class' => 'form-control']) ?>
     </div>
     </div>
 <!-- PHONE -->
     <div class="form-group row">
-    <?= form_label('Phone :', 'phone', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Phone', 'phone', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
     <?= form_input('d', $rows['phone'], ['class' => 'form-control']) ?>
     </div>
     </div>
 <!-- GENDER -->
     <div class="form-group row">
-    <?= form_label('Gender :', 'level', ['class' => 'col-sm-2 col-from-label']) ?>
+    <?= form_label('Gender', 'level', ['class' => 'col-sm-2 col-from-label']) ?>
     <div class="col-sm-10">
     <div class="custom-control custom-radio custom-control-inline">
     <?= form_radio(['class'=>'custom-control-input', 'name'=>'e', 'id'=>'M',  'required' => 'required'], 'M', isset($rows['gender']) && ($rows['gender'] == 'M') ? true : false) ?>
@@ -74,7 +70,7 @@
 
 <!-- AVATAR -->
     <div class="form-group row">
-    <?= form_label('Photo :', 'page_img', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Photo', 'page_img', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
     <div class="custom-file">
     <input type="file" class="custom-file-input" id="customFile" name="f">
@@ -117,7 +113,7 @@
 
 <!-- POSITION -->
     <div class="form-group row">
-    <?= form_label('Position :', 'position', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Position', 'position', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
     <?= form_input('g', $rows['position'], ['class' => 'form-control']) ?>
     </div>
@@ -131,21 +127,21 @@
     </div>
 <!-- LOCATION -->
     <div class="form-group row">
-    <?= form_label('Location :', 'location', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Location', 'location', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
     <?= form_dropdown('i', getDropdownList('it_locations', ['id_locations', 'locations_name']), $rows['id_locations'], array('class' => 'form-control', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- ROOM -->
     <div class="form-group row">
-    <?= form_label('Room :', 'id_room', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Room', 'id_room', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
     <?= form_dropdown('j', getDropdownList('it_rooms', ['id_room', 'room_name']), $rows['id_room'], array('class' => 'form-control', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- ACTIVE -->
     <div class="form-group row">
-    <?= form_label('Status :', 'level', ['class' => 'col-sm-2 col-from-label']) ?>
+    <?= form_label('Status', 'level', ['class' => 'col-sm-2 col-from-label']) ?>
     <div class="col-sm-10">
     <div class="custom-control custom-radio custom-control-inline">
     <?= form_radio(['class'=>'custom-control-input', 'name'=>'k', 'id'=>'Y'], 'Y', isset($rows['is_active']) && ($rows['is_active'] == 'Y') ? true : false) ?>
@@ -160,7 +156,7 @@
 
 <!-- INFO -->
     <div class="form-group row">
-    <?= form_label('Info User :', 'info', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Info User', 'info', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
     <textarea class="form-control" rows="2" name="l"><?= $rows['info']?></textarea>
     </div>
@@ -168,7 +164,7 @@
 
 <!-- UNIQUE USER -->
     <div class="form-group row">
-    <?= form_label('User Unique :', 'unique_user', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('User Unique', 'unique_user', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
     <div class="custom-control custom-checkbox">
     <?= form_checkbox(['class'=>'custom-control-input', 'name'=>'m', 'id'=>'check'], 'Y', isset($rows['unique_user']) && ($rows['unique_user'] == 'Y') ? true : false) ?>
@@ -188,21 +184,39 @@
 
 
 <!-- ===========================TAB 3==================================== -->
-<div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+<div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
 
 
 <div class="card shadow mb-4">
 <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-<h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-terminal"></i> App Info</h6>
+<h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-user"></i> User Account</h6>
 </a>
 <div class="collapse show" id="collapseCardExample">
 <div class="card-body">
 
   <div class="card text-white bg-dark">
     <div class="card-body">
-      <h6 class="card-title"><strong>New Release A1 </strong></h6>
-      <p class="card-text">You can see documentation on button link bellow..</p>
-      <a target="_blank" href="https://ariansyah.net/it-operations" class="btn btn-info"><i class="fas fa-book"></i> View Docs</a>
+      <h6 class="card-title"><strong>Caution, this function is still in the development stage!</strong></h6>
+      <p class="card-text text-warning">You can set this user to be able to log in to the application as an admin or as a user.</p>
+      <!-- <a target="_blank" href="https://ariansyah.net/it-operations" class="btn btn-info"><i class="fas fa-book"></i> View Docs</a> -->
+    <hr>
+
+
+    <div class="form-group row">
+    <?= form_label('Username', 'username', ['class' => 'col-sm-2 col-form-label', 'readonly'=>'readonly']) ?>
+    <div class="col-sm-5">
+    <?= form_input('n', $rows['username'], ['class' => 'form-control', 'required' => 'required']) ?>
+    </div>
+    </div>
+
+    <div class="form-group row">
+    <?= form_label('Password', 'username', ['class' => 'col-sm-2 col-form-label']) ?>
+    <div class="col-sm-5">
+    <?= form_password('o', $rows['password'], ['class' => 'form-control', 'required' => 'required']) ?>
+    </div>
+    </div>
+
+
     </div>
   </div>
 
@@ -211,7 +225,7 @@
 </div><!--end collapse-->
 </div><!--end shadow-->
 
-</div><!--end tab about-->
+</div><!--end tab account-->
 
 </div>
 

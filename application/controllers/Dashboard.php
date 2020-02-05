@@ -30,8 +30,9 @@ class Dashboard extends MY_Controller
       $data['active']     = $this->db->get_where('it_users', array('is_active'=>'Y','role_id'=>'0'))->num_rows();
       $data['pc']         = $this->db->get_where('it_computers', array('pc_active'=>'Y'))->num_rows();
       $data['laptop']     = $this->db->get_where('it_laptops', array('laptop_active'=>'Y'))->num_rows();
-      $data['devices']     = $this->db->get_where('it_devices', array('d_active'=>'Y'))->num_rows();
-
+      $data['devices']    = $this->db->get_where('it_devices', array('d_active'=>'Y'))->num_rows();
+      
+      $data['user']       = $this->db->get_where('it_users', ['username' => $this->session->userdata('username')])->row_array();
       $data['title']      = 'Admin | Dashboard';
       $data['main_view']  = '_adm/v_dashboard/index';
       $data['browser']    = $agent;
@@ -39,6 +40,24 @@ class Dashboard extends MY_Controller
       $data['ip']         = $this->input->ip_address();
       $this->load->view('_temp/index', $data);
   }
+
+
+// ========== CHANGE AUTHOR ==================
+
+  function change_author() {
+    $id = $this->uri->segment(3);
+      if (isset($_POST['submit'])){
+        $this->it->update_users();
+        $this->session->set_flashdata('info','<i class="fas fa-exclamation-circle"></i> Okey data has been changed..');
+        redirect('dashboard/users');
+      }else{
+        $data['title']      = 'Admin | Change Author';
+        $data['main_view']  = '_adm/v_users/change';
+        $data['rows']       = $this->it->change_users($id)->row_array();
+        $this->load->view('_temp/index', $data);
+      }
+    }
+
 
 // ========== USERS FUNCTION =================
 

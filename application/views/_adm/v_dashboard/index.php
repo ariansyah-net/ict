@@ -1,8 +1,9 @@
 <?php
 	$is_login = $this->session->userdata('is_login');
 	$username = $this->session->userdata('username');
-	$nama_admin = $this->session->userdata('nama_admin');
-	$level = $this->session->userdata('level');
+	$first_name = $this->session->userdata('first_name');
+	$last_name = $this->session->userdata('last_name');
+	$role_id = $this->session->userdata('role_id');
 ?>
 <?php if ($is_login) : ?>
 
@@ -118,11 +119,11 @@
 
 <img class="rounded mx-auto d-block mb-3" src="<?=base_url('arians/img/whois.png')?>" style="height:90px" width="120px">
 <table class="table">
-	<tr><td><i class="far fa-id-badge"></i> Name</td><td> <?= $nama_admin ?></td></tr>
+	<tr><td><i class="far fa-id-badge"></i> Name</td><td> <?= $first_name ?> <?= $last_name ?></td></tr>
 	<tr><td><i class="fab fa-ioxhost"></i> Platform</td><td> <?= $os; ?></td></tr>
 	<tr><td><i class="fas fa-globe"></i> Browser</td><td> <?= $browser; ?></td></tr>
 	<tr><td><i class="fas fa-map-marker-alt"></i> IP Address</td><td> <?= $ip; ?></td></tr>
-	<tr><td><i class="far fa-clock"></i> Time</td><td> <span id="clock"></span></td></tr>
+	<tr><td><i class="far fa-clock"></i> Member Since</td><td> <?= date('d F Y', $user['date_created']); ?></td></tr>
 </table>
 
 </div>
