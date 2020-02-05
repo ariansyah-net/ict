@@ -51,7 +51,7 @@
 
   <?php else: ?>
     <li class="nav-item">
-       <a class="nav-link waves-effect waves-light" href="<?=base_url('login')?>">
+       <a class="nav-link waves-effect waves-light" href="<?=base_url('auth')?>">
        <i class="fas fa-user"></i> Login</a>
      </li>
   </ul>
