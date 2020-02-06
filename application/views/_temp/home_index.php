@@ -71,20 +71,14 @@
 </head>
 
 <body>
-
 <header>
-
 <?php $this->load->view('_temp/home_navbar')?>
-
 <?php $this->load->view('_temp/home_header')?>
-
 </header>
 
 <?php $this->load->view($main_view)?>
-
 <?php $this->load->view('_temp/home_footer')?>
 
-  <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="<?=base_url('arians/home/js/jquery-3.4.1.min.js');?>"></script>
   <!-- Bootstrap tooltips -->

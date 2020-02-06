@@ -117,7 +117,12 @@
 <div class="card-body">
 <!-- Content -->
 
-<img class="rounded mx-auto d-block mb-3" src="<?=base_url('arians/img/whois.png')?>" style="height:90px" width="120px">
+<?php if($this->session->userdata['avatar'] == '') : ?>
+<img class="rounded mx-auto d-block mb-3" src="<?=base_url('arians/photos/whois.png')?>" style="height:115px" width="120px">
+<?php else: ?>
+<img class="rounded mx-auto d-block mb-3" src="<?=base_url('arians/photos/'.$this->session->userdata['avatar'].' ')?>" style="height:150px" width="120px">
+<?php endif ?>
+
 <table class="table">
 	<tr><td><i class="far fa-id-badge"></i> Name</td><td> <?= $first_name ?> <?= $last_name ?></td></tr>
 	<tr><td><i class="fab fa-ioxhost"></i> Platform</td><td> <?= $os; ?></td></tr>
@@ -125,13 +130,10 @@
 	<tr><td><i class="fas fa-map-marker-alt"></i> IP Address</td><td> <?= $ip; ?></td></tr>
 	<tr><td><i class="far fa-clock"></i> Member Since</td><td> <?= date('d F Y', $user['date_created']); ?></td></tr>
 </table>
-
 </div>
 </div>
 </div><!--col-lg-6-->
-
 </div><!--end row-->
-
 
 <?php else: ?>
 <!-- ************************************************************************************************ -->
