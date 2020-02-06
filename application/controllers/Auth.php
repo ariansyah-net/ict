@@ -230,13 +230,13 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Forgot Password';
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/forgot-password');
-            $this->load->view('templates/auth_footer');
+            $data['title'] = 'IT Operation | Forgot Password';
+            $this->load->view('_temp/auth_header', $data);
+            $this->load->view('_auth/forgot');
+            $this->load->view('_temp/auth_footer');
         } else {
             $email = $this->input->post('email');
-            $user = $this->db->get_where('user', ['email' => $email, 'is_active' => 1])->row_array();
+            $user = $this->db->get_where('it_users', ['email' => $email, 'is_active' => 'Y'])->row_array();
 
             if ($user) {
                 $token = base64_encode(random_bytes(32));
@@ -246,13 +246,12 @@ class Auth extends CI_Controller
                     'date_created' => time()
                 ];
 
-                $this->db->insert('user_token', $user_token);
+                $this->db->insert('it_users_token', $user_token);
                 $this->_sendEmail($token, 'forgot');
-
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Please check your email to reset your password!</div>');
+                $this->session->set_flashdata('info', '<i class="fas fa-check"></i> Please check your email to reset your password!');
                 redirect('auth/forgotpassword');
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Sorry email is not registered or activated!</div>');
+                $this->session->set_flashdata('danger', '<i class="fas fa-exclamation-triangle"></i> Sorry email is not registered or activated!');
                 redirect('auth/forgotpassword');
             }
         }
