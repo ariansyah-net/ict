@@ -2,13 +2,17 @@
   <div class="row justify-content-center">
     <div class="col-lg-7">
   
-  <div class="card o-hidden border-0 shadow-lg my-4">
-  <h5 class="card-header primary-color white-text text-center py-4"><strong>Registration</strong></h5>
+  <div class="card o-hidden border-0 shadow-lg my-5">
+  <!-- <h5 class="card-header primary-color white-text text-center py-4"><strong>Registration</strong></h5> -->
+  <div class="card-body px-lg-4 pt-4">
+
   <?php $this->load->view('_partial/flash_message') ?>
-  <div class="card-body px-lg-5 pt-0">
+
+    <div class="form-header danger-color">
+    <h5 class="white-text text-center py-1"><i class="fas fa-users"></i> Registration</h5>
+    </div>
 
       <?= form_open('auth/registration', ['class'=>'text-center']); ?>
-
 
       <div class="form-row">
         <div class="col">
