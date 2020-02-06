@@ -81,7 +81,7 @@ class Auth extends CI_Controller
             redirect('user');
         }
 
-        $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('firt_name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registered, Please login!'
         ]);
@@ -92,29 +92,30 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == false) {
-            $data['title']        = 'Nano Conference Registration';
-            $data['participant']  = $this->db->get('participant');
-            $data['presenter']    = $this->db->get('presenter');
+            $data['title']        = 'OPIT Registration';
+            // $data['participant']  = $this->db->get('participant');
+            // $data['presenter']    = $this->db->get('presenter');
 
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/registration');
-            $this->load->view('templates/auth_footer');
+            $this->load->view('_temp/auth_header', $data);
+            $this->load->view('_auth/registration');
+            $this->load->view('_temp/auth_footer');
         } else {
             $email = $this->input->post('email', true);
             $data = [
-                'name' => htmlspecialchars($this->input->post('name', true)),
-                'email' => htmlspecialchars($email),
-                'image' => 'default.jpg',
-                'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'role_id' => 2,
-                'is_active' => 1,
-                'date_created' => time(),
-                'academic_degree' => htmlspecialchars($this->input->post('academic_degree', true)),
-                'organization' => htmlspecialchars($this->input->post('organization', true)),
-                'hp' => htmlspecialchars($this->input->post('hp', true)),
-                'publications' => htmlspecialchars($this->input->post('publications', true)),
-                'id_participant' => htmlspecialchars($this->input->post('participant', true)),
-                'id_presenter' => htmlspecialchars($this->input->post('presenter', true))
+                'first_name' 	=> htmlspecialchars($this->input->post('first_name', true)),
+                'last_name' 	=> htmlspecialchars($this->input->post('last_name', true)),
+                'email' 		=> htmlspecialchars($email),
+                'avatar' 		=> 'default.jpg',
+                'password' 		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+                'role_id' 		=> 1,
+                'is_active' 	=> 'Y',
+                'date_created' 	=> time()
+                // 'academic_degree' => htmlspecialchars($this->input->post('academic_degree', true)),
+                // 'organization' => htmlspecialchars($this->input->post('organization', true)),
+                // 'hp' => htmlspecialchars($this->input->post('hp', true)),
+                // 'publications' => htmlspecialchars($this->input->post('publications', true)),
+                // 'id_participant' => htmlspecialchars($this->input->post('participant', true)),
+                // 'id_presenter' => htmlspecialchars($this->input->post('presenter', true))
             ];
 
             // siapkan token
@@ -125,12 +126,10 @@ class Auth extends CI_Controller
                 'date_created' => time()
             ];
 
-            $this->db->insert('user', $data);
-            $this->db->insert('user_token', $user_token);
-
+            $this->db->insert('it_users', $data);
+            $this->db->insert('it_token_registration', $user_token);
             $this->_sendEmail($token, 'verify');
-
-            $this->session->set_flashdata('message', '<div class="alert alert-info" role="alert"><strong>Congratulations!</strong> Your account has been successfully created, please login.</div>');
+            $this->session->set_flashdata('info', '<strong>Congratulations!</strong> Your account has been successfully created, please login.');
             redirect('auth');
         }
     }

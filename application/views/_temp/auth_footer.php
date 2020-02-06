@@ -13,6 +13,13 @@
         $(this).delay(2500).slideUp();
      });
   });
+
+
+// popovers Initialization
+$(function () {
+$('[data-toggle="popover"]').popover()
+});
+
   </script>
 </body>
 </html>

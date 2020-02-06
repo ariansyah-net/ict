@@ -26,28 +26,21 @@
           </div>
         </div>
       <div>
-
-          <a href="<?=base_url('auth/forgot')?>">Forgot password?</a>
+          <a href="<?=base_url('auth/')?>">Forgot password?</a>
         </div>
       </div>
-    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
-
-      <!-- Register -->
-      <p>Not a member?<a href="<?=base_url('auth/register')?>">Register</a></p>
-
-      <!-- Social login -->
-      <p>or sign in with:</p>
-      <a type="button" class="btn-floating btn-fb btn-sm"><i class="fab fa-facebook-f"></i></a>
-      <a type="button" class="btn-floating btn-tw btn-sm"><i class="fab fa-twitter"></i></a>
-      <a type="button" class="btn-floating btn-li btn-sm"><i class="fab fa-linkedin-in"></i></a>
-      <a type="button" class="btn-floating btn-git btn-sm"><i class="fab fa-github"></i></a>
+    <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+    <p>Not a member?<a href="<?=base_url('auth/registration')?>"> Register</a></p>
+    <!-- Social login -->
+    <p>or sign in with:</p>
+    <a type="button" class="btn-floating btn-fb btn-sm" data-toggle="popover" data-placement="left" title="Sorry !" data-content="This feature is under development, please try again later."><i class="fab fa-facebook-f"></i></a>
+    <a type="button" class="btn-floating btn-tw btn-sm" data-toggle="popover" data-placement="top" title="Sorry !" data-content="This feature is under development, please try again later."><i class="fab fa-twitter"></i></a>
+    <a type="button" class="btn-floating btn-li btn-sm" data-toggle="popover" data-placement="bottom" title="Sorry !" data-content="This feature is under development, please try again later."><i class="fab fa-linkedin-in"></i></a>
+    <a type="button" class="btn-floating btn-gplus btn-sm" data-toggle="popover" data-placement="right" title="Sorry !" data-content="This feature is under development, please try again later."><i class="fab fa-google"></i></a>
 
     <?= form_close()?>
-
   </div>
-
 </div>
-
 </div><!--end col-->
 </div><!--end row-->
 </div><!--end container-->
