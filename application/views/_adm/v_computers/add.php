@@ -247,13 +247,13 @@
                </div>
              </div>
 
-<!-- DESCRIPTIONS -->
 <div class="form-row">
-  <div class="form-group col-md-8">
-    <?= form_label('Descriptions :', 'desc') ?>
-      <textarea class="form-control" rows="2" name="desc"></textarea>
-         </div>
-            </div>
+    <!-- DESCRIPTIONS -->
+      <div class="form-group col-md-8">
+        <?= form_label('Descriptions :', 'desc') ?>
+          <textarea class="form-control" name="desc"></textarea>
+             </div>
+                </div>
 
 </div><!--end card-body-->
 </div><!--end shadow-->

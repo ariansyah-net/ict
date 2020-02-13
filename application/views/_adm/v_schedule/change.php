@@ -22,7 +22,7 @@
   <div class="form-group row">
   <?= form_label('Month Name', 'b', ['class' => 'col-sm-2 col-form-label']) ?>
   <div class="col-sm-8">
-    <?= form_multiselect('b[]', getDropdownList('it_month', ['month_name', 'month_name']), unserialize($ar['month_name']), array('class' => 'selectone form-control', 'required' => 'required')) ?>
+    <!-- <?= form_multiselect('b[]', getDropdownList('it_month', ['month_name', 'month_name']), unserialize($ar['month_name']), array('class' => 'selectone form-control', 'required' => 'required')) ?> -->
   </div>
   </div>
 

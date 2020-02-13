@@ -134,7 +134,7 @@ div.absolute {
   background-color: #F2F2F2;
 }
 .tableSpesification td {
-  padding-top: 15px;
+  padding-top: 10px;
   padding-right: 0;
   width: 100%;
   font-family: "Monospace", sans-serif, serif;

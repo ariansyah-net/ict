@@ -633,14 +633,13 @@
           return $delete?true:false;
       }
 
-
 // ================= CONTROL CARD ===============
 
   function load_controlcard(){
     return $this->db->query("SELECT * FROM it_users a JOIN it_computers b ON a.id_users=b.id_users JOIN it_rooms c ON c.id_room=a.id_room JOIN it_locations d ON d.id_locations=a.id_locations ORDER BY b.id_computers DESC");
   }
   function show_controlcard($id){
-    return $this->db->query("SELECT * FROM it_users a JOIN it_computers b ON a.id_users=b.id_users JOIN it_rooms c ON a.id_room=c.id_room JOIN it_locations d ON a.id_locations=d.id_locations JOIN it_schedule e ON b.id_schedule=e.id_schedule WHERE id_computers='$id'");
+    return $this->db->query("SELECT * FROM it_users a JOIN it_computers b ON a.id_users=b.id_users JOIN it_rooms c ON a.id_room=c.id_room JOIN it_locations d ON a.id_locations=d.id_locations JOIN it_schedule e ON a.id_room=e.id_room WHERE id_computers='$id'");
   }
 
 
