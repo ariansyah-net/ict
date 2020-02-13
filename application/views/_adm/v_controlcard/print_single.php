@@ -39,7 +39,7 @@ div.relative {
   position: relative;
   width: 55px;
   height: 50px;
-  margin-left: 150px;
+  margin-left: 140px;
   margin-right: 100px;
   clear: both;
   padding-bottom: 15px;
@@ -208,7 +208,7 @@ div.absolute {
     </table>
   <br />
   <p>
-<div class="mutted" style="text-align: center; padding-top: 7px"><small>&copy; 2020 IT Operations | www.it.ffup.org</small></div>
+<div class="mutted" style="text-align: center; padding-top: 7px"><small>&copy; <?php echo date("Y")?> IT Operations | www.it.ffup.org</small></div>
 </div>
 </div>
 
@@ -292,7 +292,7 @@ div.absolute {
             </tbody>
       </table>
       
-      <p class="mutted" style="text-align: center; padding-top: 8px">&copy; 2020 IT Operations | www.it.ffup.org</p>
+      <p class="mutted" style="text-align: center; padding-top: 8px">&copy; <?php echo date("Y")?> IT Operations | www.it.ffup.org</p>
   </div>
 
 </div>
