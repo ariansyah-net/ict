@@ -1,8 +1,8 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">
-      <?= anchor('dashboard/add_computers', '<i class="fas fa-tv"></i>', array('class' =>'btn btn-primary btn-sm'))?>
-      <?= anchor('dashboard/add_users', '<i class="fas fa-users"></i>', array('class' =>'btn btn-info btn-sm'))?>
+      <?= anchor('dashboard/computers', '<i class="fas fa-tv"></i>', array('class' =>'btn btn-primary btn-sm'))?>
+      <?= anchor('dashboard/users', '<i class="fas fa-users"></i>', array('class' =>'btn btn-info btn-sm'))?>
     </h6>
   </div>
   <div class="card-body">
@@ -32,7 +32,7 @@
                     <td class='text-center'>$row[codefication]</td>
                     <td>$row[room_name] </td>
                     <td class='text-center'>
-                    <a target='_blank' class='btn btn-info btn-circle btn-sm' title='Detail' href='".base_url('dashboard/print_card/')."$row[id_computers]'> <i class='fas fa-print'></i> </a> &nbsp;
+                    <a target='_blank' class='btn btn-info btn-circle btn-sm' title='Print' href='".base_url('dashboard/print_card/')."$row[id_computers]'> <i class='fas fa-print'></i> </a> &nbsp;
                     </td>
                     </tr>
                     ";

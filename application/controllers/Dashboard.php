@@ -532,14 +532,6 @@ class Dashboard extends MY_Controller
     redirect('dashboard/list_maintenance');
   }
 
-  // function listremove_selected(){
-  //   $idlistmaintenance = $_POST['id_listmaintenance'];
-  //   $this->it->delete_selected_listmaintenance($idlistmaintenance);
-  //   $this->session->set_flashdata('danger','<i class="fas fa-exclamation-circle"></i> Okey seleted data has been removed..');
-  //   redirect('dashboard/list_maintenance');
-  //   // print_r($_POST);
-  // }
-
   // ========== CONTROL CARD =================
 
   function control_card() {
@@ -550,17 +542,15 @@ class Dashboard extends MY_Controller
     $this->load->view('_temp/index', $data);
   }
 
-    public function print_card()
-    {
-      $id = $this->uri->segment(3);
-      $this->load->library('Pdf');
-      $data['title']    	= 'Admin | Control Card';
-      $data['main_view']  = '_adm/v_controlcard/print';
-      // $data['ar']         = $this->it->load_controlcard();
-      $data['ar'] 			  = $this->it->show_controlcard($id)->row_array();
-      $this->load->view('_temp/index', $data);
-    }
 
+  function print_card(){
+    $id = $this->uri->segment(3);
+    $this->load->library('pdf');
+    $data['ar']           = $this->it->show_controlcard($id)->row_array();
+    $this->pdf->setPaper('A4', 'potrait');
+    $this->pdf->filename  = "User control card.pdf";
+    $this->pdf->load_view('_adm/v_controlcard/print_single', $data);
+  }
 
 
 /*

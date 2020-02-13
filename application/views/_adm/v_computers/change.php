@@ -47,12 +47,12 @@
 <div class="form-row">
    <div class="form-group col-md-4">
      <?= form_label('Monitor :', 'c') ?>
-        <?= form_input('c', $ar['keyboard'], ['class' => 'form-control']) ?>
+        <?= form_input('c', $ar['monitor'], ['class' => 'form-control']) ?>
          </div>
      <!-- KEYBOARD -->
        <div class="form-group col-md-4">
         <?= form_label('Keyboard :', 'd') ?>
-          <?= form_input('d', $ar['monitor'], ['class' => 'form-control']) ?>
+          <?= form_input('d', $ar['keyboard'], ['class' => 'form-control']) ?>
             </div>
           <!-- MOUSE -->
            <div class="form-group col-md-4">
