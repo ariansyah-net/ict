@@ -13,7 +13,7 @@
             </h6>
             <br>
             <a href="<?=base_url('home/page/about-it-operation-opit')?>" class="btn btn-white btn-rounded blue-text font-weight-bold ml-lg-0 wow fadeInLeft" data-wow-delay="0.3s">Selengkapnya <i class="fas fa-angle-double-right"></i> </a>
-            <a href="<?=base_url('login')?>" class="btn btn-outline-white btn-rounded font-weight-bold wow fadeInLeft" data-wow-delay="0.3s"><i class="far fa-user pr-2"></i> Registrasi </a>
+            <a href="<?=base_url('auth/registration')?>" class="btn btn-danger btn-rounded font-weight-bold wow fadeInLeft" data-wow-delay="0.3s"><i class="far fa-user pr-2"></i> Buat Akun </a>
 
           </div>
 
