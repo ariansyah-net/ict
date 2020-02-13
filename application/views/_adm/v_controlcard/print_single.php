@@ -266,7 +266,7 @@ div.absolute {
       </tbody>
     </table>
 
-    <br />
+   
     <!-- TABLE NETWORKING -->
       <table class="tableSpesification">
         <thead>
