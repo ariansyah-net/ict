@@ -78,12 +78,15 @@ class Auth extends CI_Controller
     public function registration()
     {
         if ($this->session->userdata('email')) {
-            redirect('user');
+            redirect('member');
         }
 
-        $this->form_validation->set_rules('firt_name', 'Name', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
-            'is_unique' => 'This email has already registered, Please login!'
+        $this->form_validation->set_rules('first_name', 'First Name', 'required|trim');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required|trim');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|min_length[3]|xss_clean');
+        
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[it_users.email]', [
+            'is_unique' => 'This email has already registered, please <a class="info-danger" href="/auth">Sign In > </a>'
         ]);
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
             'matches' => 'Password dont match!',
@@ -99,50 +102,49 @@ class Auth extends CI_Controller
             $this->load->view('_temp/auth_header', $data);
             $this->load->view('_auth/registration');
             $this->load->view('_temp/auth_footer');
+
         } else {
             $email = $this->input->post('email', true);
             $data = [
                 'first_name' 	=> htmlspecialchars($this->input->post('first_name', true)),
                 'last_name' 	=> htmlspecialchars($this->input->post('last_name', true)),
+                'phone'         => htmlspecialchars($this->input->post('phone', true)),
                 'email' 		=> htmlspecialchars($email),
+                'password'      => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'avatar' 		=> 'default.jpg',
-                'password' 		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'role_id' 		=> 1,
+                'role_id' 		=> 0,
                 'is_active' 	=> 'Y',
                 'date_created' 	=> time()
-                // 'academic_degree' => htmlspecialchars($this->input->post('academic_degree', true)),
-                // 'organization' => htmlspecialchars($this->input->post('organization', true)),
-                // 'hp' => htmlspecialchars($this->input->post('hp', true)),
-                // 'publications' => htmlspecialchars($this->input->post('publications', true)),
-                // 'id_participant' => htmlspecialchars($this->input->post('participant', true)),
-                // 'id_presenter' => htmlspecialchars($this->input->post('presenter', true))
             ];
 
             // siapkan token
             $token = base64_encode(random_bytes(32));
             $user_token = [
-                'email' => $email,
-                'token' => $token,
-                'date_created' => time()
+                'email'         => $email,
+                'token'         => $token,
+                'date_created'  => time()
             ];
 
             $this->db->insert('it_users', $data);
-            $this->db->insert('it_token_registration', $user_token);
+            $this->db->insert('it_users_token', $user_token);
             $this->_sendEmail($token, 'verify');
             $this->session->set_flashdata('info', '<strong>Congratulations!</strong> Your account has been successfully created, please login.');
             redirect('auth');
         }
     }
 
+
+
+
     public function _sendEmail($token, $type)
     {
         $config = [
             'mailtype'  => 'html',
             'charset'   => 'utf-8',
-            'protocol'  => 'ssmtp',
-            'smtp_host' => 'ssl://ssmtp.googlemail.com',
-            'smtp_user' => 'conferencenano2019@gmail.com',
-            'smtp_pass' => 'nano2019',
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'ict.ffup@univpancasila.ac.id',
+            'smtp_pass' => 'pancasila',
             'smtp_port' => 465
             // 'smtp_timeout' => '7',
             // 'newline'   => "\r\n",
@@ -152,7 +154,7 @@ class Auth extends CI_Controller
         $this->email->set_newline("\r\n");
 
         $this->email->initialize($config);
-        $this->email->from('info@the4thnanoconference2019.com', 'Nano Conference 2019');
+        $this->email->from('ict.ffup@univpancasila.ac.id', 'IT FFUP');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {
@@ -177,34 +179,34 @@ class Auth extends CI_Controller
         $email = $this->input->get('email');
         $token = $this->input->get('token');
 
-        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+        $user = $this->db->get_where('it_users', ['email' => $email])->row_array();
 
         if ($user) {
-            $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
+            $user_token = $this->db->get_where('it_users_token', ['token' => $token])->row_array();
 
             if ($user_token) {
                 if (time() - $user_token['date_created'] < (60 * 60 * 24)) {
                     $this->db->set('is_active', 1);
                     $this->db->where('email', $email);
-                    $this->db->update('user');
+                    $this->db->update('it_users');
 
-                    $this->db->delete('user_token', ['email' => $email]);
+                    $this->db->delete('it_users_token', ['email' => $email]);
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">' . $email . ' has been activated! Please login.</div>');
+                    $this->session->set_flashdata('info', 'Okey' . $email . ' has been activated! Please login.</div>');
                     redirect('auth');
                 } else {
-                    $this->db->delete('user', ['email' => $email]);
-                    $this->db->delete('user_token', ['email' => $email]);
+                    $this->db->delete('it_users', ['email' => $email]);
+                    $this->db->delete('it_users_token', ['email' => $email]);
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Account activation failed! Token expired.</div>');
+                    $this->session->set_flashdata('danger', 'Account activation failed! Token expired.');
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Account activation failed! Wrong token.</div>');
+                $this->session->set_flashdata('danger', 'Account activation failed! Wrong token.');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Account activation failed! Wrong email.</div>');
+            $this->session->set_flashdata('danger', 'Account activation failed! Wrong email.');
             redirect('auth');
         }
     }

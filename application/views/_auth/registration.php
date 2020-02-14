@@ -12,38 +12,41 @@
     <h5 class="white-text text-center py-1"><i class="fas fa-users"></i> Registration</h5>
     </div>
 
-      <?= form_open('auth/registration', ['class'=>'text-center']); ?>
+      <?= form_open('auth/registration', ['class'=>'user text-center']); ?>
 
       <div class="form-row">
         <div class="col">
           <!-- First name -->
           <div class="md-form">
-              <?= form_input('first_name', set_value('first_name'), array('class' => 'form-control','name'=>'a')) ?>
+              <?= form_input('first_name', set_value('first_name'), array('class' => 'form-control')) ?>
+              <?= form_error('first_name', '<small class="text-danger">', '</small>'); ?>
               <?= form_label('First Name', '')?>
           </div>
         </div>
         <div class="col">
           <!-- Last name -->
           <div class="md-form">
-              <?= form_input('last_name', set_value('last_name'), array('class' => 'form-control','name'=>'b')) ?>
+              <?= form_input('last_name', set_value('last_name'), array('class' => 'form-control')) ?>
+              <?= form_error('last_name', '<small class="text-danger">', '</small>'); ?>
               <?= form_label('Last Name', '')?>
           </div>
         </div>
       </div>
-
       
       <div class="form-row">
         <div class="col">
           <!-- Phone -->
           <div class="md-form">
-          <?= form_input('phone', set_value('phone'), array('class' => 'form-control','name'=>'c')) ?>
+          <?= form_input('phone', set_value('phone'), array('class' => 'form-control')) ?>
+          <?= form_error('phone', '<small class="text-danger">', '</small>'); ?>
           <?= form_label('Phone', '')?>
           </div>
         </div>
         <div class="col">
           <!-- E-mail -->
           <div class="md-form">
-          <?= form_input('email', set_value('email'), array('class' => 'form-control','name'=>'d')) ?>
+          <?= form_input('email', set_value('email'), array('class' => 'form-control')) ?>
+          <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
           <?= form_label('Email', '')?>
           </div>
         </div>
@@ -53,14 +56,15 @@
         <div class="col">
           <!-- Password 1-->
           <div class="md-form">
-            <?= form_password('password', '', array('class'=>'form-control','id'=>'password1','name'=>'password1')) ?>
+            <?= form_password('password1', '', array('class'=>'form-control','id'=>'password1')) ?>
+            <?= form_error('password1', '<small class="text-danger">', '</small>'); ?>
             <?= form_label('Password', '')?>
           </div>
         </div>
         <div class="col">
           <!-- Password 2 -->
           <div class="md-form">
-            <?= form_password('password', '', array('class'=>'form-control','id'=>'password2','name'=>'password2')) ?>
+            <?= form_password('password2', '', array('class'=>'form-control','id'=>'password2')) ?>
             <?= form_label('Repeat Password', '')?>
           </div>
         </div>
@@ -69,7 +73,7 @@
     <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign Up Now</button>
 
     <p class="text-muted">Already have an account? <br />
-    <a class="btn btn-secondary btn-sm btn-rounded waves-effect" href="<?=base_url('auth')?>"> Sign In</a></p>
+    <a class="btn btn-outline-danger font-weight-bold btn-sm btn-rounded waves-effect" href="<?=base_url('auth')?>"> Sign In <i class="fas fa-angle-double-right"></i></a></p>
 
     <?= form_close()?>
 
