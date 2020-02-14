@@ -206,7 +206,7 @@ div.absolute {
           <?php endif; ?>            
       </tr>
     </table>
-  <br />
+  
   <p>
 <div class="mutted" style="text-align: center; padding-top: 7px"><small>&copy; <?php echo date("Y")?> IT Operations | www.it.ffup.org</small></div>
 </div>
