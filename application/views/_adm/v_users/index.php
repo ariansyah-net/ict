@@ -19,7 +19,7 @@
           <?php
               $no = 1;
               foreach ($ar->result_array() as $row){
-                if($row['is_active'] == 'N'){
+                if($row['is_active'] == 0){
                   echo "<tr class='text-warning'>
                         <td align='center'>$no</td>
                         <td>$row[first_name] $row[last_name]</td>

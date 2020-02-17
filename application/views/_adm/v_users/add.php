@@ -139,12 +139,12 @@
     <?= form_label('Status :', 'level', ['class' => 'col-sm-2 col-from-label']) ?>
     <div class="col-sm-10">
     <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" value="Y" id="Y" name="k" class="custom-control-input">
-    <?= form_label('Active', 'Y', ['class' => 'custom-control-label']) ?>
+    <input type="radio" value="1" id="1" name="k" class="custom-control-input">
+    <?= form_label('Active', '1', ['class' => 'custom-control-label']) ?>
     </div>
     <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" value="N" id="N" name="k" class="custom-control-input">
-    <?= form_label('Non Active', 'N', ['class' => 'custom-control-label']) ?>
+    <input type="radio" value="0" id="0" name="k" class="custom-control-input">
+    <?= form_label('Non Active', '0', ['class' => 'custom-control-label']) ?>
     </div>
     </div>
     </div>

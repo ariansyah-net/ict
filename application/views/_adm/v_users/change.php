@@ -144,12 +144,12 @@
     <?= form_label('Status', 'level', ['class' => 'col-sm-2 col-from-label']) ?>
     <div class="col-sm-10">
     <div class="custom-control custom-radio custom-control-inline">
-    <?= form_radio(['class'=>'custom-control-input', 'name'=>'k', 'id'=>'Y'], 'Y', isset($rows['is_active']) && ($rows['is_active'] == 'Y') ? true : false) ?>
-    <?= form_label('Active', 'Y', ['class' => 'custom-control-label']) ?>
+    <?= form_radio(['class'=>'custom-control-input', 'name'=>'k', 'id'=>'1'], '1', isset($rows['is_active']) && ($rows['is_active'] == '1') ? true : false) ?>
+    <?= form_label('Active', '1', ['class' => 'custom-control-label']) ?>
     </div>
     <div class="custom-control custom-radio custom-control-inline">
-    <?= form_radio(['class'=>'custom-control-input', 'name'=>'k', 'id'=>'N'], 'N', isset($rows['is_active']) && ($rows['is_active'] == 'N') ? true : false) ?>
-    <?= form_label('Non Active', 'N', ['class' => 'custom-control-label']) ?>
+    <?= form_radio(['class'=>'custom-control-input', 'name'=>'k', 'id'=>'0'], '0', isset($rows['is_active']) && ($rows['is_active'] == '0') ? true : false) ?>
+    <?= form_label('Non Active', '0', ['class' => 'custom-control-label']) ?>
     </div>
     </div>
     </div>
