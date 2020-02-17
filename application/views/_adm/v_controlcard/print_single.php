@@ -187,7 +187,7 @@ div.absolute {
     <tr>
       <td class="bolds">Month</td>
       <td class="bolds">Status</td>
-      <td class="bolds">P I C</td>
+      <td class="bolds" width="45">P I C</td>
       <td class="bolds">Initial</td>
     </tr>
       <tr>

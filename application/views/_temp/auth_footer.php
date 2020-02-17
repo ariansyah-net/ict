@@ -10,7 +10,7 @@
   <script>
   $(function() {
      $('#flash').delay(500).slideDown('normal', function() {
-        $(this).delay(2500).slideUp();
+        $(this).delay(5500).slideUp();
      });
   });
 

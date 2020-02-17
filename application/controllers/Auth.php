@@ -15,7 +15,7 @@ class Auth extends CI_Controller
             redirect('dashboard');
         }
 
-        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == false) {
@@ -35,27 +35,26 @@ class Auth extends CI_Controller
 
     private function _login()
     {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-
-        $user = $this->db->get_where('it_users', ['username' => $username])->row_array();
+        $email      = $this->input->post('email');
+        $password   = $this->input->post('password');
+        $user       = $this->db->get_where('it_users', ['email' => $email])->row_array();
 
         // jika usernya ada
         if ($user) {
             // jika usernya aktif
-            if ($user['is_active'] == 'Y') {
+            if ($user['is_active'] == 1) {
                 // cek password
                 if (password_verify($password, $user['password'])) {
                     $data = [
                         'id_users' 		=> $user['id_users'],
-                        'username' 		=> $user['email'],
+                        'email' 		=> $user['email'],
                         'role_id' 		=> $user['role_id'],
                         'first_name'	=> $user['first_name'],
                         'avatar'		=> $user['avatar'],
                         'is_login'  	=> true
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role_id'] == 2) {
+                    if ($user['role_id'] == 1) {
                         redirect('dashboard');
                     } else {
                         redirect('user');
@@ -65,11 +64,11 @@ class Auth extends CI_Controller
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('info', 'This email has not been activated! Please active your account from your email.');
+                $this->session->set_flashdata('danger', 'This email has not been activated! Please active your account from your email.');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('danger', 'Your Account is not registered!');
+            $this->session->set_flashdata('danger', 'Sorry your account is not registered!');
             redirect('auth');
         }
     }
@@ -111,9 +110,9 @@ class Auth extends CI_Controller
                 'phone'         => htmlspecialchars($this->input->post('phone', true)),
                 'email' 		=> htmlspecialchars($email),
                 'password'      => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'avatar' 		=> 'default.jpg',
-                'role_id' 		=> 0,
-                'is_active' 	=> 'Y',
+                'avatar' 		=> 'whois.png',
+                'role_id' 		=> 2,
+                'is_active' 	=> 0,
                 'date_created' 	=> time()
             ];
 
@@ -134,24 +133,21 @@ class Auth extends CI_Controller
     }
 
 
-
-
     public function _sendEmail($token, $type)
     {
         $config = [
-            'mailtype'  => 'html',
-            'charset'   => 'utf-8',
             'protocol'  => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => 465,
             'smtp_user' => 'ict.ffup@univpancasila.ac.id',
             'smtp_pass' => 'pancasila',
-            'smtp_port' => 465
-            // 'smtp_timeout' => '7',
-            // 'newline'   => "\r\n",
-            // 'crlf'      => "\r\n"
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n"
         ];
-        $this->load->library('email', $config);
-        $this->email->set_newline("\r\n");
+
+        // $this->load->library('email', $config);
+        // $this->email->set_newline("\r\n");
 
         $this->email->initialize($config);
         $this->email->from('ict.ffup@univpancasila.ac.id', 'IT FFUP');
@@ -176,10 +172,9 @@ class Auth extends CI_Controller
 
     public function verify()
     {
-        $email = $this->input->get('email');
-        $token = $this->input->get('token');
-
-        $user = $this->db->get_where('it_users', ['email' => $email])->row_array();
+        $email  = $this->input->get('email');
+        $token  = $this->input->get('token');
+        $user   = $this->db->get_where('it_users', ['email' => $email])->row_array();
 
         if ($user) {
             $user_token = $this->db->get_where('it_users_token', ['token' => $token])->row_array();
@@ -192,7 +187,7 @@ class Auth extends CI_Controller
 
                     $this->db->delete('it_users_token', ['email' => $email]);
 
-                    $this->session->set_flashdata('info', 'Okey' . $email . ' has been activated! Please login.</div>');
+                    $this->session->set_flashdata('info', 'Okey ' . $email . ' has been activated! Please login.');
                     redirect('auth');
                 } else {
                     $this->db->delete('it_users', ['email' => $email]);

@@ -27,59 +27,6 @@
 </div>
 </div>
 
-<!-- TOTAL COMPUTERS -->
-<div class="col-xl-3 col-md-6 mb-4">
-<div class="card border-left-success shadow h-100 py-2">
-<div class="card-body">
-<div class="row no-gutters align-items-center">
-<div class="col mr-2">
-<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Computers</div>
-<div class="h5 mb-0 font-weight-bold text-gray-800"><?= isset($pc) ? $pc : '' ?></div>
-</div>
-<div class="col-auto">
-<i class="fas fa-tv fa-2x text-gray-300"></i>
-</div>
-</div>
-</div>
-<a class="stretched-link" href="<?=base_url('dashboard/computers')?>"></a>
-</div>
-</div>
-
-<!-- TOTAL LAPTOP -->
-<div class="col-xl-3 col-md-6 mb-4">
-<div class="card border-left-danger shadow h-100 py-2">
-<div class="card-body">
-<div class="row no-gutters align-items-center">
-<div class="col mr-2">
-<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total Laptop</div>
-<div class="h5 mb-0 font-weight-bold text-gray-800"><?= isset($laptop) ? $laptop : '' ?></div>
-</div>
-<div class="col-auto">
-<i class="fas fa-laptop fa-2x text-gray-300"></i>
-</div>
-</div>
-</div>
-<a class="stretched-link" href="<?=base_url('dashboard/laptops')?>"></a>
-</div>
-</div>
-
-<!-- DEVICES -->
-<div class="col-xl-3 col-md-6 mb-4">
-<div class="card border-left-warning shadow h-100 py-2">
-<div class="card-body">
-<div class="row no-gutters align-items-center">
-<div class="col mr-2">
-<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Devices</div>
-<div class="h5 mb-0 font-weight-bold text-gray-800"><?= isset($devices) ? $devices : '' ?></div>
-</div>
-<div class="col-auto">
-<i class="fas fa-server fa-2x text-gray-300"></i>
-</div>
-</div>
-</div>
-<a class="stretched-link" href="<?=base_url('dashboard/devices')?>"></a>
-</div>
-</div>
 
 </div><!-- end row -->
 <!-- =========================================================================== -->

@@ -1,3 +1,52 @@
+<?php if($this->session->userdata('role_id') == 2) : ?>
+
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <a target="_blank" class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url()?>">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fab fa-asymmetrik"></i>
+        </div>
+          <div class="sidebar-brand-text mx-2">Operations <sup>IT</sup></div>
+            </a>
+
+<hr class="sidebar-divider my-0">
+
+<li class="nav-item active">
+  <a class="nav-link" href="<?=base_url('user')?>">
+    <i class="fas fa-fw fa-tachometer-alt"></i><span>Dashboard</span></a>
+      </li>
+<hr class="sidebar-divider">
+  <div class="sidebar-heading">Primary Menu</div>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#master" aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fab fa-fw fa-audible"></i>
+          <span>Master Menu</span>
+            </a>
+<div id="master" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div class="bg-white py-2 collapse-inner rounded">
+    <h6 class="collapse-header">Configurations</h6>
+      <a class="collapse-item" href="<?=base_url('user')?>">Profile</a>
+      <a class="collapse-item" href="<?=base_url('user')?>">Software</a>
+      <a class="collapse-item" href="<?=base_url('user')?>">Downloads</a>
+        </div>
+          </div>
+            </li>
+<li class="nav-item">
+  <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+    <i class="fas fa-fw fa-sign-out-alt"></i>
+      <span>Logout</span></a>
+        </li>
+<hr class="sidebar-divider d-none d-md-block">
+<div class="text-center d-none d-md-inline">
+  <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>        
+  
+  </ul>
+
+<!-- ============================================================================ -->
+<?php else: ?>
+
+
+
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <a target="_blank" class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url()?>">
@@ -113,3 +162,5 @@
 
 </ul>
 <!-- End of Sidebar -->
+
+<?php endif; ?>
