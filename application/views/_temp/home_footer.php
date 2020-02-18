@@ -98,7 +98,7 @@
   <!--Copyright-->
   <div class="footer-copyright text-center py-3 wow fadeIn" data-wow-delay="0.3s">
     <div class="container-fluid">
-      &copy; 2019 Copyright OP'IT V-4.0 LTS | Develop by <a href="https://ariansyah.net"> Ariansyah, A.Md.</a>
+      Copyright &copy; 2018 - <?php echo date("Y") ?> OPIT V-4.1 | Develop by <a target="_blank" href="https://ariansyah.net"> Ariansyah, A.Md.</a>
     </div>
   </div>
   <!--/Copyright-->

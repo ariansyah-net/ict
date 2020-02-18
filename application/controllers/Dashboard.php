@@ -585,7 +585,7 @@ class Dashboard extends MY_Controller
     }else{
       $data['title']      = 'Change Post Page';
       $data['main_view']  = '_adm/v_page/change';
-      $data['pg']         = $this->it->load_page();
+      // $data['pg']         = $this->it->load_page();
       $data['ar'] 			  = $this->it->change_page($id)->row_array();
       $this->load->view('_temp/index', $data);
     }
@@ -595,6 +595,50 @@ class Dashboard extends MY_Controller
     $this->it->delete_page($id);
     $this->session->set_flashdata('danger','<i class="fas fa-exclamation-circle"></i> Okey data has been removed..');
     redirect('dashboard/page');
+  }
+
+
+// ================ Categorys ==================
+
+  function categories() {
+    $data['title']      = 'Admin | Categories';
+    $data['main_view']  = '_adm/v_categories/index';
+    $data['ar']         = $this->it->load_categories();
+    $this->load->view('_temp/index', $data);
+  }
+
+  function add_categories() {
+  if (isset($_POST['submit'])){
+    $this->it->insert_categories();
+    $this->session->set_flashdata('info','<i class="fas fa-exclamation-circle"></i> Okey post added successfully..');
+    redirect('dashboard/categories');
+  }else{
+    $data['title']      = 'Admin | Categories';
+    $data['main_view']  = '_adm/v_categories/add';
+    $data['ar']         = $this->it->load_categories();
+    $this->load->view('_temp/index', $data);
+    }
+  }
+
+  function change_categories() {
+    $id = $this->uri->segment(3);
+    if (isset($_POST['submit'])){
+      $this->it->update_categories();
+      $this->session->set_flashdata('info','<i class="fas fa-exclamation-circle"></i> Okey data has been changed..');
+      redirect('dashboard/categories');
+    }else{
+      $data['title']      = 'Change Categories';
+      $data['main_view']  = '_adm/v_categories/change';
+      $data['ar']         = $this->it->change_categories($id)->row_array();
+      $this->load->view('_temp/index', $data);
+    }
+  }
+  
+  function remove_categories(){
+    $id = $this->uri->segment(3);
+    $this->it->delete_categories($id);
+    $this->session->set_flashdata('danger','<i class="fas fa-exclamation-circle"></i> Okey data has been removed..');
+    redirect('dashboard/categories');
   }
 
 

@@ -40,12 +40,11 @@
   <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>        
   
-  </ul>
+</ul>
+
 
 <!-- ============================================================================ -->
 <?php else: ?>
-
-
 
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -66,7 +65,7 @@
   <hr class="sidebar-divider">
   <div class="sidebar-heading">Primary Menu</div>
 
-  <!-- Nav Item - Pages Collapse Menu -->
+<!-- =============================== -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#master" aria-expanded="true" aria-controls="collapseTwo">
       <i class="fab fa-fw fa-audible"></i>
@@ -91,7 +90,7 @@
     </div>
   </li>
 
-  <!-- Nav Item - Pages Collapse Menu -->
+<!-- =============================== -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#maintenance" aria-expanded="true" aria-controls="collapseTwo">
       <i class="fas fa-chalkboard-teacher"></i>
@@ -107,7 +106,7 @@
     </div>
   </li>
 
-  <!-- Nav Item - Pages Collapse Menu -->
+<!-- ============================== -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#itprogram" aria-expanded="true" aria-controls="collapseTwo">
       &nbsp;<i class="fas fa-award"></i>
@@ -122,45 +121,56 @@
         <a class="collapse-item" href="<?=base_url('dashboard/')?>">Administrator Accounts</a>
         <a class="collapse-item" href="<?=base_url('dashboard/')?>">IT Form Request</a>
         <a class="collapse-item" href="<?=base_url('dashboard/')?>">List of Lisence Software</a>
-
       </div>
     </div>
   </li>
-
-  <!-- Nav Item - Pages Collapse Menu -->
+<!-- =============================== -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#itsettings" aria-expanded="true" aria-controls="collapseTwo">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#itpostmenu" aria-expanded="true" aria-controls="collapseThree">
+      <i class="fas fa-mail-bulk"></i>
+      <span>Post and Menu</span>
+    </a>
+    <div id="itpostmenu" class="collapse" aria-labelledby="itpostmenu" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" href="<?=base_url('dashboard/page')?>">Page Post</a>
+        <a class="collapse-item" href="<?=base_url('dashboard/categories')?>">Categories</a>
+
+        <a class="collapse-item" href="<?=base_url('dashboard/navmenu')?>">Navigation Menu</a>
+        <a class="collapse-item" href="<?=base_url('dashboard/inbox')?>">Inbox User</a>
+        <a class="collapse-item" href="<?=base_url('dashboard/downloads')?>">Download Area</a>
+      </div>
+    </div>
+  </li>
+<!-- =============================== -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#itsettings" aria-expanded="true" aria-controls="collapseThree">
       <i class="fas fa-fw fa-cogs"></i>
       <span>Settings</span>
     </a>
     <div id="itsettings" class="collapse" aria-labelledby="itsettings" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="<?=base_url('dashboard/navmenu')?>">Navigation Menu</a>
-        <a class="collapse-item" href="<?=base_url('dashboard/page')?>">Page Post</a>
-        <a class="collapse-item" href="<?=base_url('dashboard/inbox')?>">Inbox</a>
-        <a class="collapse-item" href="<?=base_url('dashboard/downloads')?>">Download Area</a>
         <a class="collapse-item" href="<?=base_url('dashboard/landing')?>">Customize Landing</a>
+        <a class="collapse-item" href="">Admin List</a>
+        
       </div>
     </div>
   </li>
 
+<!-- =============================== -->
 <!--Nav Item Single -->
   <li class="nav-item">
     <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
       <i class="fas fa-fw fa-sign-out-alt"></i>
         <span>Logout</span></a>
           </li>
-
-
-  <!-- Divider -->
-  <hr class="sidebar-divider d-none d-md-block">
-
-  <!-- Sidebar Toggler (Sidebar) -->
-  <div class="text-center d-none d-md-inline">
-    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-  </div>
+  
+<!-- Divider -->
+<hr class="sidebar-divider d-none d-md-block">
+<!-- Sidebar Toggler (Sidebar) -->
+<div class="text-center d-none d-md-inline">
+  <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
 
 </ul>
-<!-- End of Sidebar -->
 
 <?php endif; ?>

@@ -696,6 +696,41 @@
     $this->db->delete('it_pages', array('id_page' => $id));
   }
 
+
+// ================== CATEGORIES ======================
+
+  function load_categories(){
+    return $this->db->query("SELECT * FROM it_categories ORDER BY id_categories DESC");
+  }
+
+  function insert_categories(){
+    $datadb = array('cate_name'    => $this->db->escape_str($this->input->post('a')),
+                    'cate_slug'    => slug($this->input->post('a')),
+                    'cate_active'  => $this->db->escape_str($this->input->post('b')),
+                    'time_update'  => date('Y-m-d H:i:s')
+                    );
+    $this->db->insert('it_categories',$datadb);
+  }
+  
+  function change_categories($id){
+    return $this->db->query("SELECT * FROM it_categories WHERE id_categories='$id'");
+  }
+
+  function update_categories(){
+    $datadb = array('cate_name'    => $this->db->escape_str($this->input->post('a')),
+                    'cate_slug'    => slug($this->input->post('a')),
+                    'cate_active'  => $this->db->escape_str($this->input->post('b')),
+                    'time_update'  => date('Y-m-d H:i:s')
+                    );
+    $this->db->where('id_categories',$this->input->post('id'));
+    $this->db->update('it_categories',$datadb);
+  }
+
+  function delete_categories($id){
+    $this->db->where('id_categories',$id);
+    $this->db->delete('it_categories', array('id_categories' => $id));
+  }
+
 // ========== CUSTOMIZE LANDING PAGE =================
 
   function customize_landing(){

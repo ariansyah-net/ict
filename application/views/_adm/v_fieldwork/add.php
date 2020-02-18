@@ -14,7 +14,7 @@
 
 <!-- FIELDWORK NAME -->
   <div class="form-group row">
-  <?= form_label('Fieldwork Name :', 'a', ['class' => 'col-sm-2 col-form-label']) ?>
+  <?= form_label('Fieldwork Name', 'a', ['class' => 'col-sm-2 col-form-label']) ?>
   <div class="col-sm-8">
   <?= form_input('a', '', ['class' => 'form-control']) ?>
   </div>

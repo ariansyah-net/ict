@@ -20,18 +20,6 @@
     <div class="collapse show" id="collapseCardExample">
     <div class="card-body">
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?= form_open_multipart('dashboard/add_users') ?>
 <!-- FIRST NAME -->
     <div class="form-group row">
