@@ -18,6 +18,7 @@
           <?php
               $no = 1;
               foreach ($ar->result_array() as $row){
+                $date = tgl_indo($row['last_update']);
                   echo "<tr>
                         <td align='center'>$no</td>
                         <td>$row[cate_name]</td>";
@@ -27,8 +28,7 @@
                         	echo "<td><a href='' class='btn btn-default btn-sm text-danger'><i class='fas fa-exclamation-circle'></i> Non Active</a></td>";
                         }
                         echo "
-                        
-                        <td>$row[time_update]</td>
+                        <td>$date</td>
                         <td style='width:80px;'>
                         <a class='btn btn-info btn-circle btn-sm' title='Detail' href='".base_url('dashboard/change_categories/')."$row[id_categories]'> <i class='fas fa-edit'></i> </a> &nbsp;
                         <a class='btn btn-danger btn-circle btn-sm' title='Remove' href='#' data-toggle='modal' data-target='#remove$row[id_categories]' id='$row[id_categories]'><i class='fas fa-trash-alt'></i> </a>

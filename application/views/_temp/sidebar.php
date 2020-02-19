@@ -134,7 +134,7 @@
       <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item" href="<?=base_url('dashboard/page')?>">Page Post</a>
         <a class="collapse-item" href="<?=base_url('dashboard/categories')?>">Categories</a>
-
+        <a class="collapse-item" href="<?=base_url('dashboard/tags')?>">Tags</a>
         <a class="collapse-item" href="<?=base_url('dashboard/navmenu')?>">Navigation Menu</a>
         <a class="collapse-item" href="<?=base_url('dashboard/inbox')?>">Inbox User</a>
         <a class="collapse-item" href="<?=base_url('dashboard/downloads')?>">Download Area</a>

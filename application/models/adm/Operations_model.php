@@ -666,7 +666,7 @@
     $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
                     'page_slug'     => slug($this->input->post('a')),
                     'page_content'  => $this->input->post('b'),
-                    'id_users'       => $this->session->userdata('id_users'),
+                    'id_users'      => $this->session->userdata('id_users'),
                     'page_active'   => $this->db->escape_str($this->input->post('c')),
                     'page_hits'     => $this->db->escape_str($this->input->post('d')),
                     'id_tag'        => $this->db->escape_str($this->input->post('e')),
@@ -709,7 +709,7 @@
     $datadb = array('cate_name'    => $this->db->escape_str($this->input->post('a')),
                     'cate_slug'    => slug($this->input->post('a')),
                     'cate_active'  => $this->db->escape_str($this->input->post('b')),
-                    'time_update'  => date('Y-m-d H:i:s')
+                    'time_update'  => date("Y-m-d")
                     );
     $this->db->insert('it_categories',$datadb);
   }
@@ -722,7 +722,7 @@
     $datadb = array('cate_name'    => $this->db->escape_str($this->input->post('a')),
                     'cate_slug'    => slug($this->input->post('a')),
                     'cate_active'  => $this->db->escape_str($this->input->post('b')),
-                    'time_update'  => date('Y-m-d H:i:s')
+                    'time_update'  => date("Y-m-d")
                     );
     $this->db->where('id_categories',$this->input->post('id'));
     $this->db->update('it_categories',$datadb);
@@ -731,6 +731,40 @@
   function delete_categories($id){
     $this->db->where('id_categories',$id);
     $this->db->delete('it_categories', array('id_categories' => $id));
+  }
+
+// ================== TAGS ======================
+
+  function load_tags(){
+    return $this->db->query("SELECT * FROM it_tags ORDER BY id_tag DESC");
+  }
+
+  function insert_tags(){
+    $datadb = array('tag_name'    => $this->db->escape_str($this->input->post('a')),
+                    'tag_slug'    => slug($this->input->post('a')),
+                    'tag_active'  => $this->db->escape_str($this->input->post('b')),
+                    'last_update' => time()
+                    );
+    $this->db->insert('it_tags',$datadb);
+  }
+  
+  function change_tags($id){
+    return $this->db->query("SELECT * FROM it_tags WHERE id_tag='$id'");
+  }
+
+  function update_tags(){
+    $datadb = array('tag_name'    => $this->db->escape_str($this->input->post('a')),
+                    'tag_slug'    => slug($this->input->post('a')),
+                    'tag_active'  => $this->db->escape_str($this->input->post('b')),
+                    'last_update' => time()
+                    );
+    $this->db->where('id_tag',$this->input->post('id'));
+    $this->db->update('it_tags',$datadb);
+  }
+
+  function delete_tags($id){
+    $this->db->where('id_tag',$id);
+    $this->db->delete('it_tags', array('id_tag' => $id));
   }
 
 // ========== CUSTOMIZE LANDING PAGE =================

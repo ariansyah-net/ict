@@ -12,7 +12,7 @@
     <div class="form-group row">
     <?= form_label('Post Title', 'page_title', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-10">
-    <?= form_input('a', '', ['class' => 'form-control']) ?>
+    <?= form_input('a', '', ['class' => 'form-control','required'=>'required']) ?>
     </div>
     </div>
 
@@ -24,11 +24,19 @@
     </div>
     </div>
 
+<!-- CATEGORIES -->
+    <div class="form-group row">
+    <?= form_label('Categories', 'id_categories', ['class' => 'col-sm-2 col-form-label']) ?>
+    <div class="col-sm-5">
+    <?= form_dropdown('f', getDropdownList('it_categories', ['id_categories', 'cate_name']), set_value('f'), array('class' => 'custom-select mr-sm-2','required'=>'required')) ?>
+    </div>
+    </div>
+
 <!-- TAG CONTENT -->
     <div class="form-group row">
     <?= form_label('Tags', 'id_tag', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
-    <?= form_dropdown('e', getDropdownList('it_tags', ['id_tag', 'tag_name']), set_value('e'), array('class' => 'custom-select mr-sm-2')) ?>
+    <?= form_dropdown('e', getDropdownList('it_tags', ['id_tag', 'tag_name']), set_value('e'), array('class' => 'custom-select mr-sm-2','required'=>'required')) ?>
     </div>
     </div>
 
@@ -65,6 +73,6 @@
         <button type='submit' name='submit' class='btn btn-primary'><i class='fa fa-save'></i> Save Data</button>
           </div>
             </div>
-
+<?= form_close() ?>
 </div>
   </div>

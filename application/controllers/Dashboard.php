@@ -642,6 +642,49 @@ class Dashboard extends MY_Controller
   }
 
 
+// ================ TAGS =======================
+
+  function tags() {
+    $data['title']      = 'Admin | Tags';
+    $data['main_view']  = '_adm/v_tags/index';
+    $data['ar']         = $this->it->load_tags();
+    $this->load->view('_temp/index', $data);
+  }
+
+  function add_tags() {
+  if (isset($_POST['submit'])){
+    $this->it->insert_tags();
+    $this->session->set_flashdata('info','<i class="fas fa-exclamation-circle"></i> Okey post added successfully..');
+    redirect('dashboard/tags');
+  }else{
+    $data['title']      = 'Admin | Tags';
+    $data['main_view']  = '_adm/v_tags/add';
+    $data['ar']         = $this->it->load_tags();
+    $this->load->view('_temp/index', $data);
+    }
+  }
+
+  function change_tags() {
+    $id = $this->uri->segment(3);
+    if (isset($_POST['submit'])){
+      $this->it->update_tags();
+      $this->session->set_flashdata('info','<i class="fas fa-exclamation-circle"></i> Okey data has been changed..');
+      redirect('dashboard/tags');
+    }else{
+      $data['title']      = 'Change Tags';
+      $data['main_view']  = '_adm/v_tags/change';
+      $data['ar']         = $this->it->change_tags($id)->row_array();
+      $this->load->view('_temp/index', $data);
+    }
+  }
+  
+  function remove_tags(){
+    $id = $this->uri->segment(3);
+    $this->it->delete_tags($id);
+    $this->session->set_flashdata('danger','<i class="fas fa-exclamation-circle"></i> Okey data has been removed..');
+    redirect('dashboard/tags');
+  }
+
 // ======== Custome Landing Page ================
 
   function landing() {
