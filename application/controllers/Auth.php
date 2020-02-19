@@ -50,6 +50,8 @@ class Auth extends CI_Controller
                         'email' 		=> $user['email'],
                         'role_id' 		=> $user['role_id'],
                         'first_name'	=> $user['first_name'],
+                        'last_name'     => $user['last_name'],
+                        'date_created'  => $user['date_created'],
                         'avatar'		=> $user['avatar'],
                         'is_login'  	=> true
                     ];
@@ -211,18 +213,17 @@ class Auth extends CI_Controller
     {
         $data = [
             'id_users'      => null,
-            'username'      => null,
             'role_id'       => null,
             'first_name'    => null,
+            'last_name'     => null,
+            'date_created'  => null,
             'password'      => null,
             'avatar'        => null,
             'is_login'      => null
         ];
         $this->session->unset_userdata($data);
         $this->session->sess_destroy();
-        
-        // $this->session->unset_userdata('username');
-        // $this->session->unset_userdata('role_id');
+
         $this->session->set_flashdata('info', 'You have been logged out!');
         redirect(base_url());
     }

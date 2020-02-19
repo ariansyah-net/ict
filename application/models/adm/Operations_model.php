@@ -38,7 +38,9 @@
                                     'id_room'         =>$this->db->escape_str($this->input->post('j')),
                                     'is_active'       =>$this->db->escape_str($this->input->post('k')),
                                     'info'            =>$this->db->escape_str($this->input->post('l')),
-                                    'unique_user'     =>$this->db->escape_str($this->input->post('m'))
+                                    'unique_user'     =>$this->db->escape_str($this->input->post('m')),
+                                    'role_id'         =>2,
+                                    'date_created'    =>time()
                                     );
             }else{
                     $datadb = array('first_name'      =>$this->db->escape_str($this->input->post('a')),
@@ -53,7 +55,9 @@
                                     'id_room'         =>$this->db->escape_str($this->input->post('j')),
                                     'is_active'       =>$this->db->escape_str($this->input->post('k')),
                                     'info'            =>$this->db->escape_str($this->input->post('l')),
-                                    'unique_user'     =>$this->db->escape_str($this->input->post('m'))
+                                    'unique_user'     =>$this->db->escape_str($this->input->post('m')),
+                                    'role_id'         =>2,
+                                    'date_created'    =>time()
                                   );
             }
         $this->db->insert('it_users', $datadb);
@@ -79,7 +83,7 @@
                                   // 'avatar'         =>$hasil['file_name'] is none if null file_name
                                     'position'        =>$this->db->escape_str($this->input->post('g')),
                                     'id_fieldwork'    =>$this->db->escape_str($this->input->post('h')),
-                                    'id_locations'     =>$this->db->escape_str($this->input->post('i')),
+                                    'id_locations'    =>$this->db->escape_str($this->input->post('i')),
                                     'id_room'         =>$this->db->escape_str($this->input->post('j')),
                                     'is_active'       =>$this->db->escape_str($this->input->post('k')),
                                     'info'            =>$this->db->escape_str($this->input->post('l')),
@@ -87,6 +91,7 @@
                                     'username'        =>$this->db->escape_str($this->input->post('n')),
                                     'password'        =>password_hash($this->input->post('o'), PASSWORD_DEFAULT),
                                     'role_id'         =>2,
+                                    'date_created'    =>time(),
                                     'last_update'     =>date('Y-m-d H:i:s')
                                     );
             }else{
@@ -106,6 +111,7 @@
                                     'username'        =>$this->db->escape_str($this->input->post('n')),
                                     'password'        =>password_hash($this->input->post('o'), PASSWORD_DEFAULT),
                                     'role_id'         =>2,
+                                    'date_created'    =>time(),
                                     'last_update'     =>date('Y-m-d H:i:s')
                                   );
             }

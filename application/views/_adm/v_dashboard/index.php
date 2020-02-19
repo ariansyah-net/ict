@@ -1,9 +1,9 @@
 <?php
 	$is_login = $this->session->userdata('is_login');
-	$username = $this->session->userdata('username');
 	$first_name = $this->session->userdata('first_name');
 	$last_name = $this->session->userdata('last_name');
 	$role_id = $this->session->userdata('role_id');
+	$date_created = $this->session->userdata('date_created');
 ?>
 <?php if ($is_login) : ?>
 
@@ -128,7 +128,7 @@
 	<tr><td><i class="fab fa-ioxhost"></i> Platform</td><td> <?= $os; ?></td></tr>
 	<tr><td><i class="fas fa-globe"></i> Browser</td><td> <?= $browser; ?></td></tr>
 	<tr><td><i class="fas fa-map-marker-alt"></i> IP Address</td><td> <?= $ip; ?></td></tr>
-	<tr><td><i class="far fa-clock"></i> Member Since</td><td> <?= date('d F Y', $user['date_created']); ?></td></tr>
+	<tr><td><i class="far fa-clock"></i> Member Since</td><td> <?= date('d F Y', $date_created); ?></td></tr>
 </table>
 </div>
 </div>

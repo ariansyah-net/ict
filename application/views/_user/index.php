@@ -1,16 +1,16 @@
 <?php
 	$is_login = $this->session->userdata('is_login');
-	$username = $this->session->userdata('username');
 	$first_name = $this->session->userdata('first_name');
 	$last_name = $this->session->userdata('last_name');
 	$role_id = $this->session->userdata('role_id');
+	$date_created = $this->session->userdata('date_created');
 ?>
 <?php if ($is_login) : ?>
 
 <div class="row">
 
 <!-- TOTAL USERS -->
-<div class="col-xl-3 col-md-6 mb-4">
+<!-- <div class="col-xl-3 col-md-6 mb-4">
 <div class="card border-left-primary shadow h-100 py-2">
 <div class="card-body">
 <div class="row no-gutters align-items-center">
@@ -23,10 +23,10 @@
 </div>
 </div>
 </div>
-<a class="stretched-link" href="<?=base_url('dashboard/users')?>"></a>
+<a class="stretched-link" href=""></a>
 </div>
 </div>
-
+ -->
 
 </div><!-- end row -->
 <!-- =========================================================================== -->
@@ -49,7 +49,8 @@
 		</div>
 		</div>
 	<div class="card-body">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<STRONG>Selamat datang <?= $this->session->userdata['first_name']; ?> <i class="far fa-smile"></i></STRONG><br>
+		kami ucapkan terimakasih atas partisipasi anda di aplikasi OPIT, mohon maaf saat ini kami sedang dalam mode pengembangan, jadi untuk sementara aplikasi masih belum berjalan sebagaimana mestinya, namun tidak perlu khawatir kami akan pulih kembali secepatnya, mohon kembali lagi nanti.
 	</div>
 </div>
 </div><!--col-lg-6-->
@@ -75,7 +76,7 @@
 	<tr><td><i class="fab fa-ioxhost"></i> Platform</td><td> <?= $os; ?></td></tr>
 	<tr><td><i class="fas fa-globe"></i> Browser</td><td> <?= $browser; ?></td></tr>
 	<tr><td><i class="fas fa-map-marker-alt"></i> IP Address</td><td> <?= $ip; ?></td></tr>
-	<tr><td><i class="far fa-clock"></i> Member Since</td><td> <?= date('d F Y', $user['date_created']); ?></td></tr>
+	<tr><td><i class="far fa-clock"></i> Member Since</td><td> <?= date('d F Y', $date_created); ?></td></tr>
 </table>
 </div>
 </div>

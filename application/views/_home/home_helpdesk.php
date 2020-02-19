@@ -2,10 +2,10 @@
 <div class="card mb-4">
   <div class="card-body">
     <?php $this->load->view('_partial/flash_message') ?>
-      <h4 class="h3 text-center mb-5">PUSAT BANTUAN</h4>
-      <p class="text-center grey-text mb-5 lead">
+      <h4 class="h3 text-center mb-3">TIKET BANTUAN</h4>
+      <p class="grey-text text-center">
       Selamat Datang di pusat bantuan IT,
-      Untuk merampingkan permintaan bantuan dan melayani Anda dengan lebih baik, kami menggunakan sistem tiket bantuan. Setiap permintaan bantuan mendapatkan nomor tiket unik yang dapat Anda gunakan untuk melacak kemajuan dan tanggapan secara online. Untuk referensi Anda, kami menyediakan arsip lengkap dan riwayat semua permintaan dukungan Anda. Diperlukan alamat email yang valid untuk mengirimkan tiket. <br>Silahkan lengkapi data dibawah ini
+      Untuk merampingkan permintaan bantuan dan melayani Anda dengan lebih baik, kami menggunakan sistem tiket bantuan. Setiap permintaan bantuan mendapatkan nomor tiket unik yang dapat Anda gunakan untuk melacak kemajuan dan tanggapan secara online. Untuk referensi Anda, kami menyediakan arsip lengkap dan riwayat semua permintaan dukungan Anda. Diperlukan alamat email yang valid untuk mengirimkan tiket. Silahkan lengkapi data dibawah ini
       </p>
 
 <hr class="my-3">

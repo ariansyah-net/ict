@@ -32,7 +32,7 @@ class Dashboard extends MY_Controller
       $data['laptop']     = $this->db->get_where('it_laptops', array('laptop_active'=>'Y'))->num_rows();
       $data['devices']    = $this->db->get_where('it_devices', array('d_active'=>'Y'))->num_rows();
       
-      $data['user']       = $this->db->get_where('it_users', ['username' => $this->session->userdata('username')])->row_array();
+      // $data['user']       = $this->db->get_where('it_users', array('id_users' => $this->session->userdata('id_users')))->row_array();
       $data['title']      = 'Admin | Dashboard';
       $data['main_view']  = '_adm/v_dashboard/index';
       $data['browser']    = $agent;
