@@ -197,12 +197,25 @@ class Home extends MY_Controller
   }
 
 
-// ========== LACAK PERANGKAT (TRACKING) ===============
+// ========== DEVICE TRACKING ===============
 
   public function device_tracking(){
     $data['title']      = 'Tracking Device';
     $data['main_view']  = '_home/home_device_tracking';
     $this->load->view('_temp/home_single', $data);
   }
+
+// ========== STANDARD OPERATIONAL PROCEDURE ===============
+
+  public function sop(){
+    $data['title']      = 'Standard Operational Procedure';
+    $data['main_view']  = '_home/home_sop';
+    $data['ar']         = $this->home->load_sop();
+    $this->load->view('_temp/home_single', $data);
+  }
+
+
+
+
 
 }

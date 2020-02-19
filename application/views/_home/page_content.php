@@ -2,6 +2,8 @@
 <div class="container-fluid my-4">
 
   <?php foreach ($ar->result_array() as $row){
+    $date = tgl_indo($row['page_created']);
+
       if($row['page_active'] == 0){
         echo '
         <h4 class="text-center text-danger"><i class="fas fa-exclamation"></i> SORRY</h4>
@@ -18,7 +20,6 @@
             }else{
               echo "<img src='".base_url()."arians/home/media/post/$row[page_img]' class='img-fluid' alt='$row[page_title]'>";
             }
-
             echo "</div>
 
           <div class='col-md-7 d-flex align-items-center'>
@@ -27,9 +28,7 @@
                 <div class='text-default'>
                   <ul class='list-unstyled list-inline'>
                     <li class='list-inline-item'>
-                      <i class='far fa-calendar-alt'></i> ";
-                      echo date('d M Y', $row['page_created']);
-                      echo"
+                      <i class='far fa-calendar-alt'></i> $date
                     </li>
                     <li class='list-inline-item'>
                       <i class='fas fa-edit'></i> Ariansyah, A.Md

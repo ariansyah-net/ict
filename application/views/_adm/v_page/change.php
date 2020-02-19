@@ -24,6 +24,14 @@
     </div>
     </div>
 
+<!-- CATEGORIES -->
+    <div class="form-group row">
+    <?= form_label('Categories', 'id_categories', ['class' => 'col-sm-2 col-form-label']) ?>
+    <div class="col-sm-5">
+    <?= form_dropdown('f', getDropdownList('it_categories', ['id_categories', 'cate_name']), $ar['id_categories'], array('class' => 'custom-select mr-sm-2')) ?>
+    </div>
+    </div>
+
 <!-- TAG CONTENT -->
     <div class="form-group row">
     <?= form_label('Tags', 'id_tag', ['class' => 'col-sm-2 col-form-label']) ?>

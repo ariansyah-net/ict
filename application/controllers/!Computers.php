@@ -26,8 +26,8 @@ class Computers extends MY_Controller
 		*/
 
 		$computers	  = $this->computers->join('users')
-																					->orderBy('id_computers', 'desc')
-																					->paginate($page)->getAll();
+										->orderBy('id_computers', 'desc')
+										->paginate($page)->getAll();
 		$jml 					= $this->computers->orderBy('id_computers')->getAll();
 
 

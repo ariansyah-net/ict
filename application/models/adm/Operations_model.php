@@ -666,11 +666,12 @@
     $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
                     'page_slug'     => slug($this->input->post('a')),
                     'page_content'  => $this->input->post('b'),
-                    // 'id_user'       => $this->db->escape_str($this->input->post('c')),
+                    'id_users'       => $this->session->userdata('id_users'),
                     'page_active'   => $this->db->escape_str($this->input->post('c')),
                     'page_hits'     => $this->db->escape_str($this->input->post('d')),
                     'id_tag'        => $this->db->escape_str($this->input->post('e')),
-                    'page_created'  => time()
+                    'id_categories' => $this->db->escape_str($this->input->post('f')),
+                    'page_created'  => date("Y-m-d")
                     );
     $this->db->insert('it_pages',$datadb);
   }
@@ -681,11 +682,12 @@
     $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
                     'page_slug'     => slug($this->input->post('a')),
                     'page_content'  => $this->input->post('b'),
-                    // 'id_user'       => $this->db->escape_str($this->input->post('c')),
+                    'id_users'      => $this->session->userdata('id_users'),
                     'page_active'   => $this->db->escape_str($this->input->post('c')),
                     'page_hits'     => $this->db->escape_str($this->input->post('d')),
                     'id_tag'        => $this->db->escape_str($this->input->post('e')),
-                    'page_created'  => time()
+                    'id_categories' => $this->db->escape_str($this->input->post('f')),
+                    'page_created'  => date("Y-m-d")
                     );
     $this->db->where('id_page',$this->input->post('id'));
     $this->db->update('it_pages',$datadb);

@@ -20,6 +20,7 @@
           <?php
               $no = 1;
               foreach ($ar->result_array() as $row){
+              $date = tgl_indo($row['page_created']);
                 // if($row['page_active'] == '0'){
                 //   echo "";
                 // } else {
@@ -36,9 +37,8 @@
                           }else{
                             echo "<a href='#' class='btn btn-default btn-sm text-danger'><i class='fas fa-exclamation'></i> Non Active</a>";
                           }
-                        echo"</td><td>";
-                        echo date('d M Y', $row['page_created']);
-                        echo "</td>
+                        echo"</td>";
+                        echo "<td>$date</td>
                         <td style='width:80px;'>
                         <a class='btn btn-info btn-circle btn-sm' title='Detail' href='".base_url('dashboard/change_page/')."$row[id_page]'> <i class='far fa-edit'></i> </a> &nbsp;
                         <a class='btn btn-danger btn-circle btn-sm' title='Remove' href='#' data-toggle='modal' data-target='#remove$row[id_page]' id='$row[id_page]'><i class='fas fa-trash-alt'></i> </a>

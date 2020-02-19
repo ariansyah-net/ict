@@ -13,16 +13,14 @@
   <style>
     html,
         body,
-        header,
-        .view {
+        header{
           height: 100px;
         }
 
         @media (max-width: 740px) {
           html,
           body,
-          header,
-          .view {
+          header {
             height: 100px;
           }
         }
@@ -30,8 +28,7 @@
         @media (min-width: 800px) and (max-width: 1030px) {
           html,
           body,
-          header,
-          .view  {
+          header{
             height: 650px;
           }
         }
@@ -50,7 +47,6 @@
         @media (max-width: 768px) {
             .navbar:not(.top-nav-collapse) {
                 background: #929fba !important;
-
             }
         }
         h6 {
@@ -64,10 +60,10 @@
             background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.6), rgba(50, 189, 229, 0.6) 100%);
         }
         @media (max-width: 450px) {
-            .margins {
-                margin-right: 1rem;
-                margin-left: 1rem;
-            }
+          .margins {
+              margin-right: 1rem;
+              margin-left: 1rem;
+          }
         }
     </style>
 </head>
