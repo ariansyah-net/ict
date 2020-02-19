@@ -16,9 +16,9 @@
             <div class='col-md-5 mb-1'>
             ";
             if($row['page_img'] == ''){
-              echo "<img src='".base_url()."arians/home/media/post/cards.png' class='img-fluid' alt='$row[page_title]'>";
+              echo "<img src='".base_url()."arians/media/post/cards.png' class='img-fluid' alt='$row[page_title]'>";
             }else{
-              echo "<img src='".base_url()."arians/home/media/post/$row[page_img]' class='img-fluid' alt='$row[page_title]'>";
+              echo "<img src='".base_url()."arians/media/post/$row[page_img]' class='img-fluid' alt='$row[page_title]'>";
             }
             echo "</div>
 

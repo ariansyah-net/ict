@@ -17,7 +17,7 @@
         <?php if(!$row->page_img) : ?>
           <img class="img-fluid" src="<?=base_url('arians/img/section.jpg')?>" alt="NO IMAGE">
             <?php else: ?>
-              <img class="img-fluid" src="<?=$row->page_img?>" alt="Sample image">
+              <img class="img-fluid" src="<?=base_url('arians/media/post/')?><?=$row->page_img?>" alt="Sample image">
                 <?php endif; ?>
                   <a><div class="mask rgba-white-slight"></div></a>
                     </div>
