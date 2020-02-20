@@ -177,12 +177,11 @@ class Home extends MY_Controller
   }
 
   function helpdesk_process() {
-      $datadb = array('inbox_name'    => strip_tags($this->input->post('a')),
+      $datadb = array('other_user'      => strip_tags($this->input->post('a')),
                       'inbox_email'   => htmlspecialchars($this->input->post('b')),
                       'inbox_subject' => htmlspecialchars($this->input->post('c')),
                       'inbox_message' => htmlspecialchars($this->input->post('d')),
-                      'inbox_date'		=> date('Y-m-d'),
-                      'inbox_time'    => date('H:i:s')
+                      'inbox_date'		=> date('Y-m-d')
                       );
       $captcha  = $this->input->post('captcha');
       if(md5($captcha)==$this->session->userdata('keycode')){

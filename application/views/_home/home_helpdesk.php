@@ -1,108 +1,124 @@
 <div class="container my-5">
-<div class="card mb-4">
-  <div class="card-body">
-    <?php $this->load->view('_partial/flash_message') ?>
-      <h4 class="h3 text-center mb-3">TIKET BANTUAN</h4>
-      <p class="grey-text text-center">
-      Selamat Datang di pusat bantuan IT,
-      Untuk merampingkan permintaan bantuan dan melayani Anda dengan lebih baik, kami menggunakan sistem tiket bantuan. Setiap permintaan bantuan mendapatkan nomor tiket unik yang dapat Anda gunakan untuk melacak kemajuan dan tanggapan secara online. Untuk referensi Anda, kami menyediakan arsip lengkap dan riwayat semua permintaan dukungan Anda. Diperlukan alamat email yang valid untuk mengirimkan tiket. Silahkan lengkapi data dibawah ini
-      </p>
+<section class="contact-section my-5">
+  <div class="card">
+  <?php $this->load->view('_partial/flash_message') ?>
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="card-body form">
+          <?= form_open('home/helpdesk_process') ?>
+          <!-- <h3 class="mt-4 text-secondary"><i class="fas fa-envelope pr-2"></i>Tiket Bantuan</h3> -->
+           <h4 class="h3 text-center text-muted my-3"><i class="fas fa-envelope pr-2"></i> TIKET BANTUAN</h4>
+           <p class="grey-text text-center">
+              Selamat Datang di menu tiket bantuan,
+              Untuk merampingkan permintaan bantuan dan melayani anda dengan lebih baik, kami menggunakan sistem tiket bantuan. Setiap permintaan bantuan mendapatkan nomor tiket unik yang dapat anda gunakan untuk melacak kemajuan dan tanggapan secara online. Untuk referensi anda, kami menyediakan arsip lengkap dan riwayat semua permintaan dukungan anda. Diperlukan alamat email yang valid untuk mengirimkan tiket. Silahkan lengkapi data dibawah ini
+            </p>
 
-<hr class="my-3">
-
-        <div class="row">
-          <div class="col-md-9 mb-md-0 mb-5">
-
-              <?= form_open('home/helpdesk_process') ?>
-                <div class="row">
-                <!--Name-->
-                <div class="col-md-6 wow fadeInUp">
+            <div class="row">
+              <div class="col-md-6">
                 <div class="md-form mb-0">
-                <input type="text" id="name" name="a" class="form-control" value="<?= set_value('a') ?>" required>
-                <label for="name" class="">Nama</label>
+                  <input type="text" id="name" name="a" class="form-control" value="<?= set_value('a') ?>" required>
+                  <label for="name" class="">Nama Anda</label>
                 </div>
-                </div>
-                <!--Email-->
-                <div class="col-md-6 wow fadeInUp">
+              </div>
+              <div class="col-md-6">
                 <div class="md-form mb-0">
-                <input type="email" id="email" name="b" class="form-control" value="<?= set_value('b') ?>" required>
-                <label for="email" class="">Email Anda</label>
-                <small class="form-text text-muted">Email anda tidak akan ditampilkan ke publik</small>
+                  <input type="email" id="email" name="b" class="form-control" value="<?= set_value('b') ?>" required>
+                  <label for="email" class="">Email Anda</label>
                 </div>
-                </div>
-                </div>
+              </div>
+            </div><!-- Grid row -->
 
-                <div class="row">
-                <!--Phone-->
-                <div class="col-md-6 wow fadeInUp">
+            <div class="row">
+              <div class="col-md-6">
                 <div class="md-form mb-0">
-                <input type="text" id="phone" name="c" class="form-control" value="<?= set_value('c') ?>" required>
-                <label for="phone" class="">No. Telp</label>
+                  <input type="text" id="phone" name="c" class="form-control" value="<?= set_value('c') ?>" required>
+                  <label for="phone" class="">Nomor HP</label>
                 </div>
-                </div>
+              </div>
+            </div><!-- Grid row -->
 
-                </div>
-
-                <!--Ringkasan Masalah-->
-                <div class="row">
-                <div class="col-md-12 wow fadeInUp">
-                <div class="md-form mb-0">
-                <input type="text" id="subject" name="c" class="form-control" value="<?= set_value('c') ?>" required>
-                <label for="subject" class="">Judul Masalah</label>
-                </div>
-                </div>
-                </div>
-
-                <!--Detail Problem-->
-                <div class="row">
-                <div class="col-md-12 wow fadeInUp">
-                <div class="md-form">
-                <textarea type="text" id="message" name="d" rows="4" class="form-control md-textarea" required><?= set_value('d') ?></textarea>
-                <label for="message">Detail Masalah Anda</label>
-                </div>
-                </div>
-                </div>
-
-                <!--Captcha Image-->
-                <div class="row">
-                <div class="col-md-4">
-                <div class="md-form">
-                <?php echo $img; ?>
-                </div>
-                </div>
-                <!--Captcha Form-->
-                <div class="col-md-6 wow fadeInUp">
-                <div class="md-form">
-                <?= form_input('captcha', '', array('id'=>'captcha','class' => 'form-control','required' => 'required')) ?>
-                <label for="captcha">Masukan Captcha</label>
-                </div>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-md-12 mt-4 wow fadeInLeft">
-                <div class="text-left">
-                <button type='submit' name='submit' class='btn btn-primary'>Kirim Tiket Bantuan <i class='fas fa-paper-plane ml-2'></i></button>
-                </div>
-                </div>
-                </div>
-                </div><!--Grid column-->
-                <?= form_close() ?>
-
-                <div class="col-md-3 text-center">
-                <ul class="list-unstyled mb-0">
-                <li class="wow fadeInDown mt-5">
-                <p class="mb-0"><a class="btn btn-primary btn-rounded"><i class="fas fa-list"></i> Daftar Tiket</a>
-                </li>
-                <li class="wow fadeInDown mt-5">
-                <p class="mb-0"><a class="btn btn-info btn-rounded"><i class="fas fa-check"></i> Cek Tiket Anda</a>
-                </li>
-                <li class="wow fadeInUp mt-5">
-                <p class="mb-0"><a href="<?=base_url('home/contact')?>" class="btn btn-danger btn-rounded"><i class="far fa-user"></i> Kontak Kami</a>
-                </li>
-                </ul>
-                </div><!--Grid column-->
+            <!--Ringkasan Masalah-->
+            <div class="row">
+            <div class="col-md-12 wow fadeInUp">
+            <div class="md-form mb-0">
+            <input type="text" id="subject" name="d" class="form-control" value="<?= set_value('d') ?>" required>
+            <label for="subject" class="">Judul Masalah</label>
             </div>
-        <!-- </section> -->
-      </div>
-    </div>
+            </div>
+            </div>
+
+            <!-- Grid row -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <textarea type="text" id="message" name="e" rows="2" class="form-control md-textarea" required><?= set_value('e') ?></textarea>
+                  <label for="message">Detail Masalah Anda</label>
+                </div>
+              </div>
+            </div><!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <?php echo $img; ?>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <?= form_input('captcha', '', array('id'=>'captcha','class' => 'form-control','required' => 'required')) ?>
+                  <label for="captcha">Masukan Angka</label>
+                  <button type='submit' name='submit' class='btn btn-lg btn-floating blue p-0' title='Sent Message'><i class="far fa-paper-plane"></i></button>
+                </div>
+              </div>
+            </div><!-- Grid row -->
+              <?= form_close() ?>
+          </div>
+        </div><!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-5">
+          <div class="card-body contact text-center h-100 white-text secondary darken-2">
+            <h3 class="my-4 pb-2">Frequently Asked Questions (FAQs)</h3>
+            <ul class="text-lg-left list-unstyled ml-0">
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Berapa lama proses penanganan keluhan saya?</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Dimana saya dapat memantau keluhan saya?</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Apakah informasi yang saya masukan aman?</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Kapan jadwal maintenance di komputer saya?</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Saya lupa account OPIT saya</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Saya membutuhkan software yang saya inginkan</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Komputer saya tidak bisa konek ke internet</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Saya ingin berbagi printer dengan komputer lain</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Bagaimana melakukan update di Linux?</a></li>
+                <li><a class="white-text" href=""><i class="fas fa-caret-right text-white"></i> Saya ingin memuat berita untuk ditampilkan di web</a></li>
+
+              <!-- <li><p><i class="fas fa-map-marker-alt pr-2 white-text"></i>Jakarta, 12640 Indonesia</p></li>
+              <li><p><i class="fas fa-phone pr-2 white-text"></i>+62-217-864-727 / Ext : 581</p></li>
+              <li><p><i class="fas fa-envelope pr-2 white-text"></i>ict@ffup.org</p></li> -->
+            </ul>
+            <hr class="hr-light my-4">
+            <ul class="list-inline text-center list-unstyled">
+              
+              <li class="list-inline-item">
+                
+                <a href="#" class="p2 fa-lg fb-ic"><i class="fab fa-facebook white-text"> </i></a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#" class="p2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="p2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="p2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
+              </li>
+            </ul>
+
+            </div>
+          </div><!-- Grid column -->
+        </div><!-- Grid row -->
+      </div><!-- Form with header -->
+    </section>
+    <hr>
 </div>
