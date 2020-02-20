@@ -177,7 +177,7 @@ class Home extends MY_Controller
   }
 
   function helpdesk_process() {
-      $datadb = array('other_user'      => strip_tags($this->input->post('a')),
+      $datadb = array('id_users'      => strip_tags($this->input->post('id_users')),
                       'inbox_email'   => htmlspecialchars($this->input->post('b')),
                       'inbox_subject' => htmlspecialchars($this->input->post('c')),
                       'inbox_message' => htmlspecialchars($this->input->post('d')),

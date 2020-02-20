@@ -8,7 +8,7 @@
   <div class="card-body px-lg-4 pt-4">
 
     <div class="form-header primary-color">
-    <h5 class="white-text text-center py-1"><i class="fas fa-sign-in-alt"></i> Sign In</h5>
+    <h5 class="white-text text-center py-1"><i class="fas fa-sign-in-alt"></i> Silahkan Masuk</h5>
     </div>
   <?php $this->load->view('_partial/flash_message') ?>
 
@@ -31,17 +31,17 @@
         <div>
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="rm">
-            <label class="form-check-label text-muted" for="rm">Remember me</label>
+            <label class="form-check-label text-muted" for="rm">Ingatkan Saya</label>
           </div>
         </div>
       <div>
-          <a href="<?=base_url('auth/forgotPassword')?>">Forgot password?</a>
+          <a href="<?=base_url('auth/forgotPassword')?>">Lupa Password?</a>
         </div>
       </div>
-    <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
-    <p class="text-muted">Not a member?<a href="<?=base_url('auth/registration')?>"> Register</a></p>
+    <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Masuk Aplikasi</button>
+    <p class="text-muted">Belum punya akun? <a href="<?=base_url('auth/registration')?>"> Daftar dulu</a></p>
     <!-- Social login -->
-    <p class="text-muted">or sign in with:</p>
+    <p class="text-muted">Masuk melalui:</p>
     <a type="button" class="btn-floating btn-fb btn-sm" data-toggle="popover" data-placement="left" title="Sorry !" data-content="This feature is under development, please try again later."><i class="fab fa-facebook-f"></i></a>
     <a type="button" class="btn-floating btn-tw btn-sm" data-toggle="popover" data-placement="top" title="Sorry !" data-content="This feature is under development, please try again later."><i class="fab fa-twitter"></i></a>
     <a type="button" class="btn-floating btn-li btn-sm" data-toggle="popover" data-placement="bottom" title="Sorry !" data-content="This feature is under development, please try again later."><i class="fab fa-linkedin-in"></i></a>

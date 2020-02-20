@@ -1,3 +1,30 @@
+<?php
+    $is_login       = $this->session->userdata('is_login');
+    $id_users       = $this->session->userdata('id_users');
+    $first_name     = $this->session->userdata('first_name');
+    $email          = $this->session->userdata('email');
+    $phone          = $this->session->userdata('phone');
+?>
+
+<?php if(!$is_login) : ?>
+
+<div class="container my-5">
+<section class="contact-section my-5">
+    <h4 class="h3 text-center text-muted my-3"><i class="fas fa-envelope pr-2"></i> TIKET BANTUAN</h4>
+    <p class="grey-text text-center">
+    Maaf anda diwajibkan untuk masuk ke aplikasi sebelum mengisi tiket bantuan, silahkan klik tombol dibawah ini :
+    <br>
+    <a href="<?=base_url('auth')?>" class="btn btn-rounded btn-primary btn-md"><i class="fas fa-sign-in-alt"></i> MASUK</a>
+    atau
+    <a href="<?=base_url('auth')?>" class="btn btn-rounded btn-success btn-md"><i class="fas fa-users"></i> DAFTAR</a>
+    </p>
+    
+</section>
+</div>    
+
+
+<?php else: ?>
+
 <div class="container my-5">
 <section class="contact-section my-5">
   <div class="card">
@@ -16,13 +43,14 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="text" id="name" name="a" class="form-control" value="<?= set_value('a') ?>" required>
+                  <input type="text" id="name" class="form-control" value="<?= $first_name ?>" required>
+                  <?= form_hidden('id_users', $id_users); ?>
                   <label for="name" class="">Nama Anda</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="email" id="email" name="b" class="form-control" value="<?= set_value('b') ?>" required>
+                  <input type="email" id="email" class="form-control" value="<?= $email ?>" required>
                   <label for="email" class="">Email Anda</label>
                 </div>
               </div>
@@ -31,7 +59,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="text" id="phone" name="c" class="form-control" value="<?= set_value('c') ?>" required>
+                  <input type="text" id="phone" class="form-control" value="<?= $phone ?>" required>
                   <label for="phone" class="">Nomor HP</label>
                 </div>
               </div>
@@ -100,7 +128,7 @@
             <ul class="list-inline text-center list-unstyled">
               
               <li class="list-inline-item">
-                
+
                 <a href="#" class="p2 fa-lg fb-ic"><i class="fab fa-facebook white-text"> </i></a>
               </li>
 
@@ -122,3 +150,6 @@
     </section>
     <hr>
 </div>
+
+
+<?php endif; ?>

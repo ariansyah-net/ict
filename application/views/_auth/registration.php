@@ -9,7 +9,7 @@
   <?php $this->load->view('_partial/flash_message') ?>
 
     <div class="form-header danger-color">
-    <h5 class="white-text text-center py-1"><i class="fas fa-users"></i> Registration</h5>
+    <h5 class="white-text text-center py-1"><i class="fas fa-users"></i> Registrasi</h5>
     </div>
 
       <?= form_open('auth/registration', ['class'=>'user text-center']); ?>
@@ -20,7 +20,7 @@
           <div class="md-form">
               <?= form_input('first_name', set_value('first_name'), array('class' => 'form-control')) ?>
               <?= form_error('first_name', '<small class="text-danger">', '</small>'); ?>
-              <?= form_label('First Name', '')?>
+              <?= form_label('Nama Depan', '')?>
           </div>
         </div>
         <div class="col">
@@ -28,7 +28,7 @@
           <div class="md-form">
               <?= form_input('last_name', set_value('last_name'), array('class' => 'form-control')) ?>
               <?= form_error('last_name', '<small class="text-danger">', '</small>'); ?>
-              <?= form_label('Last Name', '')?>
+              <?= form_label('Nama Belakang', '')?>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
           <div class="md-form">
           <?= form_input('phone', set_value('phone'), array('class' => 'form-control')) ?>
           <?= form_error('phone', '<small class="text-danger">', '</small>'); ?>
-          <?= form_label('Phone', '')?>
+          <?= form_label('No. HP', '')?>
           </div>
         </div>
         <div class="col">
@@ -65,15 +65,15 @@
           <!-- Password 2 -->
           <div class="md-form">
             <?= form_password('password2', '', array('class'=>'form-control','id'=>'password2')) ?>
-            <?= form_label('Repeat Password', '')?>
+            <?= form_label('Ulangi Password', '')?>
           </div>
         </div>
       </div>
 
-    <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign Up Now</button>
+    <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Daftar Sekarang <i class="far fa-paper-plane"></i></button>
 
-    <p class="text-muted">Already have an account? <br />
-    <a class="btn btn-outline-danger font-weight-bold btn-sm btn-rounded waves-effect" href="<?=base_url('auth')?>"> Sign In <i class="fas fa-angle-double-right"></i></a></p>
+    <p class="text-muted">Sudah punya akun? <br />
+    <a class="btn btn-outline-danger font-weight-bold btn-sm btn-rounded waves-effect" href="<?=base_url('auth')?>"> Masuk Aplikasi <i class="fas fa-angle-double-right"></i></a></p>
 
     <?= form_close()?>
 
