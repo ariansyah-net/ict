@@ -9,6 +9,14 @@ class Home extends MY_Controller
         $this->load->library('user_agent', 'url');
     }
 
+    // public function isLogin()
+    // {
+    //   $isLogin = $this->session->userdata('is_login');
+    //   if(!$isLogin){
+    //       redirect('auth');
+    //   }
+    // }
+
     public function index($page = null)
     {
 
@@ -123,6 +131,13 @@ class Home extends MY_Controller
 // ================== DOWNLOADS ================
 
     public function downloads(){
+      
+      // $isLogin = $this->session->userdata('is_login');
+      // if(!$isLogin){
+      //     redirect('auth');
+      // }
+
+
       // $data['ar'] 			     = $this->it->orderBy('id_download', 'desc')->getAll();
       // $data['jml']        	= $this->download->getAll();
       // $data['jumlah'] 			= count($data['jml']);

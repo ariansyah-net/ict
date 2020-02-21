@@ -81,9 +81,11 @@
   <div class="container">
 
     <section class="text-center pt-5 wow fadeIn" data-wow-delay="0.3s">
-      <h1 class="font-weight-bold text-center text-danger h1 my-5">404 PAGE NOT FOUND</h1>
-      <p class="text-center grey-text mb-5 mx-auto w-responsive lead">Maaf, halaman yang anda cari tidak ditemukan, pastikan url yang anda tuju sudah benar.</p>
-
+        
+      <img src="<?= base_url('arians/img/panda.png')?>">
+      <h4 class="font-weight-bold text-center text-danger h4 my-2">Yaahh.. Ga Ada..</h4>
+      <p class="text-center grey-text mx-auto w-responsive">Khmm.. halaman yang anda cari tidak ditemukan, pastikan url yang anda tuju sudah benar.</p>
+      <p><a href="<?=base_url()?>" class="btn btn-secondary btn-rounded btn-sm"><i class="fas fa-arrow-left mr-2"></i> Kembali</a></p>
       <hr class="my-5">
         <!--Grid row-->
         <div class="row text-left">
