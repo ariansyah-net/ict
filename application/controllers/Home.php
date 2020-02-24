@@ -63,7 +63,6 @@ class Home extends MY_Controller
 
     public function page(){
 
-      // $this->load->model('Nano_model');
       $ids = $this->uri->segment(3);
       $dat = $this->db->query("SELECT * FROM it_pages WHERE page_slug='".$this->db->escape_str($ids)."'");
       $row = $dat->row();
@@ -72,9 +71,9 @@ class Home extends MY_Controller
         redirect(base_url());
       }
       $this->home->hits_update($ids);
-      $data['ar']         = $this->db->query("SELECT * FROM it_pages a JOIN it_tags b ON a.id_tag=b.id_tag WHERE page_slug='".$this->db->escape_str($ids)."'");
+      $data['ar']         = $this->db->query("SELECT * FROM it_pages a JOIN it_users b ON a.id_users=b.id_users WHERE page_slug='".$this->db->escape_str($ids)."'")->result();
       $data['title']      = $row->page_title;
-      $data['main_view'] = '_home/page_content';
+      $data['main_view']  = '_home/page_content';
       $this->load->view('_temp/home_single', $data);
     }
 
@@ -136,7 +135,6 @@ class Home extends MY_Controller
       // if(!$isLogin){
       //     redirect('auth');
       // }
-
 
       // $data['ar'] 			     = $this->it->orderBy('id_download', 'desc')->getAll();
       // $data['jml']        	= $this->download->getAll();

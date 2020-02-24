@@ -1,9 +1,9 @@
 <?php
-    $is_login       = $this->session->userdata('is_login');
-    $id_users       = $this->session->userdata('id_users');
-    $first_name     = $this->session->userdata('first_name');
-    $email          = $this->session->userdata('email');
-    $phone          = $this->session->userdata('phone');
+  $is_login       = $this->session->userdata('is_login');
+  $id_users       = $this->session->userdata('id_users');
+  $first_name     = $this->session->userdata('first_name');
+  $email          = $this->session->userdata('email');
+  $phone          = $this->session->userdata('phone');
 ?>
 
 <?php if(!$is_login) : ?>
@@ -21,8 +21,8 @@
 </div>
 
 <?php else: ?>
+  
 <!-- ============================================== -->
-
 
 <?php if($ar): ?>
 <?php $i = 0; ?>

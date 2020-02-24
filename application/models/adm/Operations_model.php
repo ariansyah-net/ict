@@ -668,14 +668,24 @@
     return $this->db->query("SELECT * FROM it_pages ORDER BY id_page DESC");
   }
 
+
+
+  
+
+
   function insert_page(){
+    $datadb1 = array();
+    foreach ($_POST['e'] as $tag) {
+      array_push($datadb1, $tag);
+    }
+    $tag = serialize($datadb1);
     $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
                     'page_slug'     => slug($this->input->post('a')),
                     'page_content'  => $this->input->post('b'),
                     'id_users'      => $this->session->userdata('id_users'),
                     'page_active'   => $this->db->escape_str($this->input->post('c')),
                     'page_hits'     => $this->db->escape_str($this->input->post('d')),
-                    'id_tag'        => $this->db->escape_str($this->input->post('e')),
+                    'tag'           => $tag,
                     'id_categories' => $this->db->escape_str($this->input->post('f')),
                     'page_created'  => date("Y-m-d")
                     );
@@ -685,13 +695,18 @@
     return $this->db->query("SELECT * FROM it_pages WHERE id_page='$id'");
   }
   function update_page(){
+    $datadb1 = array();
+    foreach ($_POST['e'] as $tag) {
+      array_push($datadb1, $tag);
+    }
+    $tag = serialize($datadb1);
     $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
                     'page_slug'     => slug($this->input->post('a')),
                     'page_content'  => $this->input->post('b'),
                     'id_users'      => $this->session->userdata('id_users'),
                     'page_active'   => $this->db->escape_str($this->input->post('c')),
                     'page_hits'     => $this->db->escape_str($this->input->post('d')),
-                    'id_tag'        => $this->db->escape_str($this->input->post('e')),
+                    'tag'           => $tag,
                     'id_categories' => $this->db->escape_str($this->input->post('f')),
                     'page_created'  => date("Y-m-d")
                     );

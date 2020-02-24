@@ -34,9 +34,14 @@
 
 <!-- TAG CONTENT -->
     <div class="form-group row">
-    <?= form_label('Tags', 'id_tag', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Tags', 'tag', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
-    <?= form_dropdown('e', getDropdownList('it_tags', ['id_tag', 'tag_name']), set_value('e'), array('class' => 'custom-select mr-sm-2','required'=>'required')) ?>
+    <select multiple="multiple" class="multiselect form-control" name="e[]">
+    <?php foreach ($tags as $r): ?>
+    <option value="<?=$r->tag_name?>"><?= $r->tag_name ?></option>
+    <?php endforeach; ?>
+    </select>
+
     </div>
     </div>
 

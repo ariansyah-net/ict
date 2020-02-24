@@ -572,7 +572,8 @@ class Dashboard extends MY_Controller
   }else{
     $data['title']      = 'Admin | Add Page Post';
     $data['main_view']  = '_adm/v_page/add';
-    $data['ar']        = $this->it->load_page();
+    $data['ar']         = $this->it->load_page();
+    $data['tags']       = $this->db->query("SELECT * FROM it_tags WHERE tag_active=1 ")->result();
     $this->load->view('_temp/index', $data);
     }
   }
@@ -585,7 +586,6 @@ class Dashboard extends MY_Controller
     }else{
       $data['title']      = 'Change Post Page';
       $data['main_view']  = '_adm/v_page/change';
-      // $data['pg']         = $this->it->load_page();
       $data['ar'] 			  = $this->it->change_page($id)->row_array();
       $this->load->view('_temp/index', $data);
     }
