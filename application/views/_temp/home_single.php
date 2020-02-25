@@ -14,14 +14,14 @@
     html,
         body,
         header{
-          height: 100px;
+          height: 80px;
         }
 
         @media (max-width: 740px) {
           html,
           body,
           header {
-            height: 100px;
+            height: 75px;
           }
         }
 
@@ -29,7 +29,7 @@
           html,
           body,
           header{
-            height: 650px;
+            height: 80px;
           }
         }
 
@@ -41,14 +41,14 @@
         /* .top-nav-collapse {
             background-color: #929fba !important;
         } */
-        .navbar:not(.top-nav-collapse) {
+        /*.navbar:not(.top-nav-collapse) {
             background: #929fba !important;
-        }
-        @media (max-width: 768px) {
+        }*/
+        /*@media (max-width: 768px) {
             .navbar:not(.top-nav-collapse) {
                 background: #929fba !important;
             }
-        }
+        }*/
         h6 {
             line-height: 1.7;
         }
@@ -65,6 +65,7 @@
               margin-left: 1rem;
           }
         }
+        
     </style>
 </head>
 
@@ -94,6 +95,10 @@
         $(this).delay(3500).slideUp();
      });
   });
+// popovers Initialization
+$(function () {
+$('[data-toggle="popover"]').popover()
+});
   </script>
 </body>
 </html>

@@ -30,6 +30,10 @@
     <div class="col-sm-5">
     <?= form_dropdown('f', getDropdownList('it_categories', ['id_categories', 'cate_name']), set_value('f'), array('class' => 'custom-select mr-sm-2','required'=>'required')) ?>
     </div>
+    <div class="col-sm-1">
+    <a class="text-secondary" target="blank" title="add new categories" href="<?=base_url('dashboard/categories')?>">
+    <i class="far fa-question-circle"></i></a>
+    </div>
     </div>
 
 <!-- TAG CONTENT -->
@@ -41,8 +45,12 @@
     <option value="<?=$r->tag_name?>"><?= $r->tag_name ?></option>
     <?php endforeach; ?>
     </select>
-
     </div>
+    <div class="col-sm-1">
+    <a class="text-secondary" target="blank" title="add new tags" href="<?=base_url('dashboard/tags')?>">
+    <i class="far fa-question-circle"></i></a>
+    </div>
+
     </div>
 
 <!-- PAGE ACTIVE-->

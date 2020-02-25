@@ -1,5 +1,5 @@
 <!--Footer-->
-<footer class="page-footer pt-4 mt-4 unique-color lighten-3 text-center text-md-left">
+<footer class="page-footer pt-4 unique-color lighten-3 text-center text-md-left">
 
   <!--Footer Links-->
   <div class="container wow fadeIn" data-wow-delay="0.3s">

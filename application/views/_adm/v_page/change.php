@@ -30,6 +30,10 @@
     <div class="col-sm-5">
     <?= form_dropdown('f', getDropdownList('it_categories', ['id_categories', 'cate_name']), $ar['id_categories'], array('class' => 'custom-select mr-sm-2')) ?>
     </div>
+    <div class="col-sm-1">
+    <a class="text-secondary" target="blank" title="add new categories" href="<?=base_url('dashboard/categories')?>">
+    <i class="far fa-question-circle"></i></a>
+    </div>
     </div>
 
 <!-- TAG CONTENT -->
@@ -37,6 +41,10 @@
     <?= form_label('Tags', 'tag', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
     <?= form_multiselect('e[]', getDropdownList('it_tags', ['tag_name', 'tag_name']), unserialize($ar['tag']), array('class' => 'multiselect form-control')) ?>
+    </div>
+    <div class="col-sm-1">
+    <a class="text-secondary" target="blank" title="add new tags" href="<?=base_url('dashboard/tags')?>">
+    <i class="far fa-question-circle"></i></a>
     </div>
     </div>
 
