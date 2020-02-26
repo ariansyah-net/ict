@@ -725,7 +725,7 @@
     $datadb = array('cate_name'    => $this->db->escape_str($this->input->post('a')),
                     'cate_slug'    => slug($this->input->post('a')),
                     'cate_active'  => $this->db->escape_str($this->input->post('b')),
-                    'time_update'  => date("Y-m-d")
+                    'last_update'  => date("Y-m-d")
                     );
     $this->db->insert('it_categories',$datadb);
   }
@@ -738,7 +738,7 @@
     $datadb = array('cate_name'    => $this->db->escape_str($this->input->post('a')),
                     'cate_slug'    => slug($this->input->post('a')),
                     'cate_active'  => $this->db->escape_str($this->input->post('b')),
-                    'time_update'  => date("Y-m-d")
+                    'last_update'  => date("Y-m-d")
                     );
     $this->db->where('id_categories',$this->input->post('id'));
     $this->db->update('it_categories',$datadb);
