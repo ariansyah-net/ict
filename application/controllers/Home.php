@@ -236,7 +236,7 @@ class Home extends MY_Controller
 
 // ========== JOB DESCRIPTIONS ===============
 
-  public function jobdesc(){
+  public function jobdescription(){
     $data['title']      = 'Job Descriptions';
     $data['main_view']  = '_home/home_jobdescription';
     $data['ar']         = $this->home->load_jobdescription();
