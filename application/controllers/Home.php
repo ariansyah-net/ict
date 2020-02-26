@@ -227,12 +227,31 @@ class Home extends MY_Controller
   }
 // ========== JOB INSTRUCTIONS ===============
 
-  public function ji(){
+  public function jobinstruction(){
     $data['title']      = 'Job Instructions';
-    $data['main_view']  = '_home/home_ik';
-    $data['ar']         = $this->home->load_ji();
+    $data['main_view']  = '_home/home_jobinstruction';
+    $data['ar']         = $this->home->load_jobinstruction();
     $this->load->view('_temp/home_single', $data);
   }
+
+// ========== JOB DESCRIPTIONS ===============
+
+  public function jobdesc(){
+    $data['title']      = 'Job Descriptions';
+    $data['main_view']  = '_home/home_jobdesc';
+    $data['ar']         = $this->home->load_jobdesc();
+    $this->load->view('_temp/home_single', $data);
+  }
+
+// ========== JOB PROGRAM ===============
+
+  public function jobprogram(){
+    $data['title']      = 'Job Program';
+    $data['main_view']  = '_home/home_jobprogram';
+    $data['ar']         = $this->home->load_jobprogram();
+    $this->load->view('_temp/home_single', $data);
+  }
+
 
 
 

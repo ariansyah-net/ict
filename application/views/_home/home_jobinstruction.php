@@ -2,7 +2,7 @@
 <div class="container">
 
 <section class="my-5">
-<h3 class="h3-responsive font-weight-bold text-center my-4">JOB INSTRUCTIONS</h3>
+<h3 class="h3-responsive font-weight-bold text-center my-4">INSTRUKSI KERJA</h3>
 <p class="grey-text text-center w-responsive mx-auto mb-5">
 Instruksi Kerja (IK) merupakan suatu perintah yang disediakan untuk membantu seseorang dalam
 melakukan pekerjaan	dengan benar atau suatu set instruksi untuk melakukan tugas atau mengikuti

@@ -114,9 +114,9 @@
     </a>
     <div id="itprogram" class="collapse" aria-labelledby="itprogram" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="<?=base_url('dashboard/')?>">Job Program</a>
-        <a class="collapse-item" href="<?=base_url('dashboard/')?>">Job Description</a>
-        <a class="collapse-item" href="<?=base_url('dashboard/')?>">Procedure Process</a>
+        <!-- <a class="collapse-item" href="<?=base_url('dashboard/')?>">Job Program</a> -->
+        <!-- <a class="collapse-item" href="<?=base_url('dashboard/')?>">Job Description</a> -->
+        <!-- <a class="collapse-item" href="<?=base_url('dashboard/')?>">Procedure Process</a> -->
         <a class="collapse-item" href="<?=base_url('dashboard/')?>">News Delivery Form</a>
         <a class="collapse-item" href="<?=base_url('dashboard/')?>">Administrator Accounts</a>
         <a class="collapse-item" href="<?=base_url('dashboard/')?>">IT Form Request</a>
