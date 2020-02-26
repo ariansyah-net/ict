@@ -20,7 +20,6 @@
                 </div>
               </div>
             </form>
-
           </div><!-- Grid column -->
 
           <!-- Grid column -->

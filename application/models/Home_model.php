@@ -15,6 +15,10 @@
   function load_sop(){
     return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories JOIN it_users c ON a.id_users=c.id_users WHERE b.id_categories=1 AND page_active=1 ORDER BY id_page DESC")->result();
   }
+  // GET IK ON POST PAGE
+  function load_ji(){
+    return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories JOIN it_users c ON a.id_users=c.id_users WHERE b.id_categories=2 AND page_active=1 ORDER BY id_page DESC")->result();
+  }
 
 
 }

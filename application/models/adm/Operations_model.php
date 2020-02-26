@@ -665,13 +665,8 @@
 
 
   function load_page(){
-    return $this->db->query("SELECT * FROM it_pages ORDER BY id_page DESC");
+    return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories ORDER BY id_page DESC");
   }
-
-
-
-  
-
 
   function insert_page(){
     $datadb1 = array();

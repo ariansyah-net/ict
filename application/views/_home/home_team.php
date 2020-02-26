@@ -7,9 +7,10 @@
   <!-- Section heading -->
   <h2 class="h1-responsive font-weight-bold text-center my-5">Our amazing team</h2>
   <!-- Section description -->
-  <p class="grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
-    nostrum quisquam eum porro a pariatur veniam.</p>
+  <p class="grey-text text-center w-responsive mx-auto mb-5">
+    Kerjasama tim menjadi kunci utama kami dalam Penyelesaian Masalah,
+    Pencapaian Tujuan, ataupun Sasaran yang telah direncanakan dan disepakati secara bersama.
+  </p>
 
   <!-- Grid row-->
   <div class="row text-center text-md-left">

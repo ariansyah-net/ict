@@ -225,6 +225,14 @@ class Home extends MY_Controller
     $data['ar']         = $this->home->load_sop();
     $this->load->view('_temp/home_single', $data);
   }
+// ========== JOB INSTRUCTIONS ===============
+
+  public function ji(){
+    $data['title']      = 'Job Instructions';
+    $data['main_view']  = '_home/home_ik';
+    $data['ar']         = $this->home->load_ji();
+    $this->load->view('_temp/home_single', $data);
+  }
 
 
 

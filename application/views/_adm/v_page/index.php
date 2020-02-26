@@ -9,7 +9,8 @@
           <tr>
             <th>No.</th>
             <th>Title</th>
-            <th>Page Link</th>
+            
+            <th>Category</th>
             <th>Viewer</th>
             <th>Status</th>
             <th>Last Update</th>
@@ -23,10 +24,10 @@
             $date = tgl_indo($row['page_created']);
             echo "<tr>
                   <td align='center'>$no</td>
-                  <td>$row[page_title]</td>
-                  <td align='center'><a target='_blank' href='".base_url('home/page/')."$row[page_slug]' class='btn btn-circle btn-info btn-sm'><i class='fas fa-link'></i></a></td>
+                  <td><a class='text-primary' target='_blank' href='".base_url('home/page/')."$row[page_slug]'>$row[page_title]</a></td>
+                  <td>$row[cate_name]</td>
                   <td align='center'>
-                  <a href='' class='btn btn-default btn-sm'><i class='far fa-eye'></i>
+                  <a href='#' class='btn btn-default btn-sm'><i class='far fa-eye'></i>
                   $row[page_hits]</a></td>
                   <td class='text-grey text-center'>";
                     if($row['page_active'] == '1'){
