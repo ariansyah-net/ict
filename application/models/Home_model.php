@@ -20,7 +20,7 @@
     return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories JOIN it_users c ON a.id_users=c.id_users WHERE b.id_categories=2 AND page_active=1 ORDER BY id_page DESC")->result();
   }
   // GET JOBDESC ON POST PAGE
-  function load_jobdesc(){
+  function load_jobdescription(){
     return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories JOIN it_users c ON a.id_users=c.id_users WHERE b.id_categories=3 AND page_active=1 ORDER BY id_page DESC")->result();
   }
   // GET JOB PROGRAM ON POST PAGE

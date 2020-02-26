@@ -238,8 +238,8 @@ class Home extends MY_Controller
 
   public function jobdesc(){
     $data['title']      = 'Job Descriptions';
-    $data['main_view']  = '_home/home_jobdesc';
-    $data['ar']         = $this->home->load_jobdesc();
+    $data['main_view']  = '_home/home_jobdescription';
+    $data['ar']         = $this->home->load_jobdescription();
     $this->load->view('_temp/home_single', $data);
   }
 
