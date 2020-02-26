@@ -23,32 +23,32 @@
 
 <?php else: ?>
 
-<div class="container my-5">
-<section class="contact-section my-5">
-  <div class="card">
+<div class="container-fluid my-4">
+<section class="contact-section my-4">
+  <div class="card mx-2">
   <?php $this->load->view('_partial/flash_message') ?>
     <div class="row">
-      <div class="col-lg-7">
+      <div class="col-lg-8">
         <div class="card-body form">
           <?= form_open('home/helpdesk_process') ?>
           <!-- <h3 class="mt-4 text-secondary"><i class="fas fa-envelope pr-2"></i>Tiket Bantuan</h3> -->
            <h4 class="h3 text-center text-muted my-3"><i class="fas fa-envelope pr-2"></i> TIKET BANTUAN</h4>
-           <p class="grey-text text-center">
+           <p class="grey-text text-center pb-3">
               Selamat Datang di menu tiket bantuan,
               Untuk merampingkan permintaan bantuan dan melayani anda dengan lebih baik, kami menggunakan sistem tiket bantuan. Setiap permintaan bantuan mendapatkan nomor tiket unik yang dapat anda gunakan untuk melacak kemajuan dan tanggapan secara online. Untuk referensi anda, kami menyediakan arsip lengkap dan riwayat semua permintaan dukungan anda. Diperlukan alamat email yang valid untuk mengirimkan tiket. Silahkan lengkapi data dibawah ini
             </p>
-
+            <hr>
             <div class="row">
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="text" id="name" class="form-control" value="<?= $first_name ?>" required>
+                  <input type="text" id="name" class="form-control text-muted" value="<?= $first_name ?>" readonly>
                   <?= form_hidden('id_users', $id_users); ?>
                   <label for="name" class="">Nama Anda</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="email" id="email" class="form-control" value="<?= $email ?>" required>
+                  <input type="email" id="email" class="form-control text-muted" value="<?= $email ?>" readonly>
                   <label for="email" class="">Email Anda</label>
                 </div>
               </div>
@@ -57,7 +57,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="text" id="phone" class="form-control" value="<?= $phone ?>" required>
+                  <input type="text" id="phone" class="form-control text-muted" value="<?= $phone ?>" required>
                   <label for="phone" class="">Nomor HP</label>
                 </div>
               </div>
@@ -103,7 +103,7 @@
         </div><!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-lg-5">
+        <div class="col-lg-4">
           <div class="card-body contact text-center h-100 white-text secondary darken-2">
             <h3 class="my-4 pb-2">Frequently Asked Questions (FAQs)</h3>
             <ul class="text-lg-left list-unstyled ml-0">
