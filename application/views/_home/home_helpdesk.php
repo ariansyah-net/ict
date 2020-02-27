@@ -11,7 +11,7 @@
 <div class="container my-5">
 <section class="contact-section my-5">
     <h4 class="h3 text-center text-muted my-3"><i class="fas fa-envelope pr-2"></i> TIKET BANTUAN</h4>
-    <p class="grey-text text-center py-2">Maaf anda harus masuk dulu sebelum mengisi tiket bantuan, silahkan klik tombol dibawah ini :</p>
+    <p class="grey-text text-center py-2">Maaf, anda harus masuk dulu sebelum mengisi tiket bantuan, silahkan klik tombol dibawah ini :</p>
     <p class="text-center grey-text my-1">
     <a href="<?=base_url('auth')?>" class="btn btn-rounded btn-primary btn-md"><i class="fas fa-sign-in-alt"></i> MASUK</a>
     atau

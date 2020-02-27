@@ -1,3 +1,26 @@
+<?php
+    $is_login       = $this->session->userdata('is_login');
+    // $id_users       = $this->session->userdata('id_users');
+    // $first_name     = $this->session->userdata('first_name');
+    // $email          = $this->session->userdata('email');
+    // $phone          = $this->session->userdata('phone');
+?>
+
+<?php if(!$is_login) : ?>
+
+<div class="container my-5">
+<section class="contact-section my-5">
+    <h4 class="h3 text-center text-muted my-3"><i class="fas fa-chalkboard-teacher"></i> CHECK LIST MAINTENANCE </h4>
+    <p class="grey-text text-center py-2">Maaf, anda harus masuk dulu sebelum melihat daftar checklist maintenance, silahkan klik tombol dibawah ini :</p>
+    <p class="text-center grey-text my-1">
+    <a href="<?=base_url('auth')?>" class="btn btn-rounded btn-primary btn-md"><i class="fas fa-sign-in-alt"></i> MASUK</a>
+    atau
+    <a href="<?=base_url('auth/registration')?>" class="btn btn-rounded btn-success btn-md"><i class="fas fa-users"></i> DAFTAR</a>
+    </p>
+</section>
+</div>  
+
+<?php else: ?>
 <main>
   <section class="purple-gradient">
       <div class="container">
@@ -34,3 +57,4 @@
 
   </section>
 </main>
+<?php endif; ?>
