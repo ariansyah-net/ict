@@ -16,7 +16,7 @@
                 <input type="text" class="form-control border-0 z-depth-0" placeholder="..." aria-label="checking"
                   aria-describedby="checking">
                 <div class="input-group-append">
-                  <a type="button" class="btn btn-md btn-mdb-color m-0 px-3 py-2 z-depth-0" id="checking" data-toggle="popover" data-placement="right" title="Sorry !" data-content="This feature is under development, please try again tomorrow."><i class="far fa-calendar-alt pr-2"></i> Check Schedule</a>
+                  <a type="button" class="btn btn-md btn-mdb-color m-0 px-3 py-2 z-depth-0" id="checking" data-toggle="popover" data-placement="right" title="Sorry !" data-content="This feature is under development, please try again tomorrow."><i class="far fa-calendar-alt pr-2"></i> Check Maintenance</a>
                 </div>
               </div>
             </form>
