@@ -12,7 +12,7 @@
         <h5 class="title font-weight-bold mb-4">TENTANG OP'IT</h5>
           <p class="mb-0" align="justify">
             <img class="mr-2" style="float:left;" src="<?=base_url('./arians/home/img/up-50x.png')?>">
-            IT Operation Adalah sebuah aplikasi yang menyajikan informasi dan pelayanan IT di lingkungan Fakultas Farmasi Universitas Pancasila, hal-hal yang mencakup ruang dan kerja IT dapat anda temukan disini. <a class="text-warning" href="">Baca Selengkapnya</a>
+            IT Operation Adalah sebuah aplikasi yang menyajikan informasi dan pelayanan IT di lingkungan Fakultas Farmasi Universitas Pancasila, hal-hal yang mencakup ruang dan kerja IT dapat anda temukan disini. <a class="text-warning" href="<?=base_url('home/page/about-it-operation-opit')?>">Baca Selengkapnya</a>
           </p>
       </div>
       <!--Grid column-->
@@ -20,19 +20,19 @@
       <hr class="w-100 clearfix d-lg-none">
 
       <div class="col-lg-3 ml-auto">
-        <h5 class="title font-weight-bold mb-4">TENTANG SITUS</h5>
+        <h5 class="title font-weight-bold mb-4">HALAMAN SITUS</h5>
         <ul class="list-unstyled mb-0">
           <li>
-            <p><a href="">Disclaimer</a></p>
+            <p><a href="">Seputar Pertanyaan (FAQs)</a></p>
           </li>
           <li>
-            <p><a href="">Term of Service</a></p>
+            <p><a href="">Ketentuan Layanan</a></p>
           </li>
           <li>
-            <p><a href="">Privacy Policy</a></p>
+            <p><a href="">Kebijakan Privasi</a></p>
           </li>
           <li>
-            <p><a href="">Site Map</a></p>
+            <p><a href="">Peta Situs</a></p>
           </li>
         </ul>
       </div>
@@ -41,13 +41,15 @@
 
       <!--Grid column-->
       <div class="col-lg-4 ml-auto">
-        <h5 class="title font-weight-bold mb-4">INFO TERBARU</h5>
+        <h5 class="title font-weight-bold mb-4">POSTINGAN DARI BLOG</h5>
         <ul class="list-unstyled">
           <li>
-            <p><a href="#"><i class="fas fa-caret-right"></i> Instruksi Kerja Sistem Kepegawaian</a></p>
-            <p><a href="#"><i class="fas fa-caret-right"></i> Rilis Program OPIT Versi 4.0</a></p>
-            <p><a href="#"><i class="fas fa-caret-right"></i> Program Kerja ICT Tahun Akademik 2019/2020</a></p>
-            <p><a href="#"><i class="fas fa-caret-right"></i> Instruksi Kerja Sistem Tata Usaha</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Pentingnya Belajar Sistem Operasi Linux</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Antivirus Terbaik Untuk Windows 10</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Sharing Printer ke Jaringan Lokal</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Cara Mematikan Update Windows 10</a></p>
+            <p><a href="#"><i class="fas fa-caret-right"></i> Cara Membuat Blog Pribadi di Wordpress</a></p>
+            
           </li>
         </ul>
       </div>

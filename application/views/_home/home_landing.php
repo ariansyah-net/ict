@@ -45,7 +45,7 @@
           <div class="col-10 col-md-9 col-lg-10 float-right">
             <h4 class="font-weight-bold mb-4">Gudang Software</h4>
             <p class="grey-text">Kami menyediakan daftar perangkat lunak <em>(Software)</em> yang umum digunakan dalam pekerjaan sehari-hari, software tersebut dapat di download disini.</p>
-            <a class="btn btn-secondary btn-sm ml-0">Download Software</a>
+            <a href="<?=base_url('home/downloads')?>" class="btn btn-secondary btn-sm ml-0">Download Software</a>
           </div>
         </div><!--Grid column-->
       </div><!--Grid row-->
@@ -198,7 +198,7 @@
              <i class="fas fa-tv indigo-text pr-2"></i> <?= isset($pc) ? $pc : '' ?> Personal Computer
            </h5>
            <p class="text-muted">
-             Data komputer Pengguna dan Laboratorium Tahun Periode 2019
+             Data komputer Pengguna dan Laboratorium Tahun Periode <?php echo date('Y') ?>
            </p>
          </div>
          <div class="col-lg-4 col-md-6 mb-5">
@@ -222,7 +222,7 @@
              <i class="fas fa-network-wired red-text pr-2"></i> <?= isset($switch) ? $switch : '' ?> Switch Hub
            </h5>
            <p class="text-muted mb-lg-0">
-             Perangkat Jaringan Switch Untuk Kebutuhan Jaringan
+             Perangkat Jaringan Switch Untuk Kebutuhan Jaringan Internet
            </p>
          </div>
          <div class="col-lg-4 col-md-6 mb-5">

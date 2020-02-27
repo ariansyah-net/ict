@@ -164,7 +164,13 @@ class Home extends MY_Controller
 // ============= IT HELP ======================
 
   public function helpdesk() {
-    $config_captcha = array(
+
+    $this->form_validation->set_rules('a', 'Judul Masalah', 'trim|required|min_length[10]|xss_clean');
+    $this->form_validation->set_rules('b', 'Isi Masalah', 'trim|required|min_length[20]|xss_clean');
+
+    if ($this->form_validation->run() == false) {
+      
+      $config_captcha = array(
             'img_path'    => './arians/home/captcha/',
             'img_url'     => base_url().'arians/home/captcha/',
             'font_path'   => './arians/home/captcha/captcha.ttf',
@@ -181,33 +187,36 @@ class Home extends MY_Controller
                                   'grid' => array(230, 230, 230))
            );
 
-    $cap = create_captcha($config_captcha);
-    $data['img'] = $cap['image'];
-    $this->session->set_userdata('keycode', md5($cap['word']));
-    $data['title']      = 'IT Operations | Help Desk';
-    $data['main_view']  = '_home/home_helpdesk';
-    $this->load->view('_temp/home_single', $data);
-  }
-
-  function helpdesk_process() {
-      $datadb = array('id_users'      => strip_tags($this->input->post('id_users')),
-                      'inbox_email'   => htmlspecialchars($this->input->post('b')),
-                      'inbox_subject' => htmlspecialchars($this->input->post('c')),
-                      'inbox_message' => htmlspecialchars($this->input->post('d')),
-                      'inbox_date'		=> date('Y-m-d')
+      $cap = create_captcha($config_captcha);
+      $data['img'] = $cap['image'];
+      $this->session->set_userdata('keycode', md5($cap['word']));
+      $data['title']      = 'IT Operations | Help Desk';
+      $data['main_view']  = '_home/home_helpdesk';
+      $this->load->view('_temp/home_single', $data);
+    } else {
+      $datadb = array('id_users'        => strip_tags($this->input->post('id_users')),
+                      'title_problem'   => htmlspecialchars($this->input->post('a')),
+                      'detail_problem'  => htmlspecialchars($this->input->post('b')),
+                      'id_ticket'       => date('shimYd'),
+                      'period'          => date('Y'),
+                      'problem_read'    => 0,
+                      'date'            => date('d M Y'),
+                      'result'          => 'repaired',
+                      'time_update'     => date('Y-m-d h:i:s')
                       );
       $captcha  = $this->input->post('captcha');
       if(md5($captcha)==$this->session->userdata('keycode')){
         $this->session->unset_userdata('keycode');
         $this->db->insert('it_problems', $datadb);
-        $this->session->set_flashdata('info', 'Thankyou, your message has been sent, we will follow up on this!');
-        redirect('home/contact');
+        $this->session->set_flashdata('info', '<i class="fas fa-check"></i> Terimakasih, masalah mu telah sampai pada kami, akan segera kami tindak lanjuti.');
+        redirect('home/helpdesk');
       }else{
-        $this->session->set_flashdata('danger', 'Uppss.. something is wrong message not send, please check your input bellow!');
-        redirect('home/contact');
+        $this->session->set_flashdata('danger', '<i class="fas fa-exclamation-triangle"></i> Uppss.. ada yang salah nih, coba cek lagi, mungkin ada inputan yang salah.');
+        redirect('home/helpdesk');
       }
-  }
+    }
 
+  }
 
 // ========== DEVICE TRACKING ===============
 
@@ -252,9 +261,23 @@ class Home extends MY_Controller
     $this->load->view('_temp/home_single', $data);
   }
 
+// ========== SCHEDULE MAINTENANCE ===============
 
+  public function schedule_maintenance(){
+    $data['title']      = 'Schedule Maintenance';
+    $data['main_view']  = '_home/home_schedule_maintenance';
+    $data['ar']         = $this->home->load_scheduleMaintenance();
+    $this->load->view('_temp/home_single', $data);
+  }
 
+// ========== SCHEDULE MAINTENANCE ===============
 
+  public function checklist_maintenance(){
+    $data['title']      = 'Check List Maintenance';
+    $data['main_view']  = '_home/home_checklist_maintenance';
+    $data['ar']         = $this->home->load_checklist_maintenance();
+    $this->load->view('_temp/home_single', $data);
+  }
 
 
 }

@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="card-body form">
-          <?= form_open('home/helpdesk_process') ?>
+          <?= form_open('home/helpdesk') ?>
           <!-- <h3 class="mt-4 text-secondary"><i class="fas fa-envelope pr-2"></i>Tiket Bantuan</h3> -->
            <h4 class="h3 text-center text-muted my-3"><i class="fas fa-envelope pr-2"></i> TIKET BANTUAN</h4>
            <p class="grey-text text-center pb-3">
@@ -57,7 +57,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="text" id="phone" class="form-control text-muted" value="<?= $phone ?>" required>
+                  <input type="text" id="phone" class="form-control text-muted" value="<?= $phone ?>" readonly>
                   <label for="phone" class="">Nomor HP</label>
                 </div>
               </div>
@@ -67,8 +67,9 @@
             <div class="row">
             <div class="col-md-12 wow fadeInUp">
             <div class="md-form mb-0">
-            <input type="text" id="subject" name="d" class="form-control" value="<?= set_value('d') ?>" required>
+            <input type="text" id="subject" name="a" class="form-control" value="<?= set_value('a') ?>" required>
             <label for="subject" class="">Judul Masalah</label>
+            <?= form_error('a', '<small class="text-danger"><i class="fas fa-exclamation-triangle"></i> ', '</small>') ?>
             </div>
             </div>
             </div>
@@ -77,8 +78,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="md-form mb-0">
-                  <textarea type="text" id="message" name="e" rows="2" class="form-control md-textarea" required><?= set_value('e') ?></textarea>
-                  <label for="message">Detail Masalah Anda</label>
+                  <textarea type="text" id="detail" name="b" rows="2" class="form-control md-textarea" required><?= set_value('b') ?></textarea>
+                  <label for="detail">Detail Masalah Anda</label>
+                  <?= form_error('b', '<small class="text-danger"> <i class="fas fa-exclamation-triangle"></i> ', '</small>') ?>
                 </div>
               </div>
             </div><!-- Grid row -->

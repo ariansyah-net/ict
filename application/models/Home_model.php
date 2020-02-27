@@ -27,5 +27,13 @@
   function load_jobprogram(){
     return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories JOIN it_users c ON a.id_users=c.id_users WHERE b.id_categories=4 AND page_active=1 ORDER BY id_page DESC")->result();
   }
+  // GET SCHEDULE MAINTENANCE ON POST PAGE
+  function load_scheduleMaintenance(){
+    return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories JOIN it_users c ON a.id_users=c.id_users WHERE b.id_categories=5 AND page_active=1 ORDER BY id_page DESC")->result();
+  }
+  // GET CHECKLIST MAINTENANCE ON POST PAGE
+  function load_checklist_maintenance(){
+    return $this->db->query("SELECT * FROM it_pages a JOIN it_categories b ON a.id_categories=b.id_categories JOIN it_users c ON a.id_users=c.id_users WHERE b.id_categories=5 AND page_active=1 ORDER BY id_page DESC")->result();
+  }
 
 }
