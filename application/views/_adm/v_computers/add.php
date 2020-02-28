@@ -113,25 +113,25 @@
                 <?= form_input('n', '', ['class' => 'form-control']) ?>
                   </div>
                     </div>
-<!--
- PRINTER
+
+ <!-- PRINTER -->
 <div class="form-row">
  <div class="form-group col-md-4">
    <?= form_label('Printer :', 'o') ?>
       <?= form_input('o', '', ['class' => 'form-control']) ?>
        </div>
-       SCANNER
+       <!-- SCANNER -->
          <div class="form-group col-md-4">
           <?= form_label('Scanner :', 'p') ?>
             <?= form_input('p', '', ['class' => 'form-control']) ?>
               </div>
-            UPS
+            <!-- UPS -->
               <div class="form-group col-md-4">
                <?= form_label('U P S :', 'ups') ?>
                  <?= form_input('ups', '', ['class' => 'form-control']) ?>
                    </div>
                     </div>
-                      -->
+                      
 
     </div><!--end card-body-->
   </div><!--end collapse-->
@@ -154,6 +154,18 @@
 
 <!-- IP ADDRESS -->
   <div class="form-row">
+
+    <!-- IP TYPE -->
+    <div class="form-group col-md-4">
+    <?= form_label('IP Type :', 'iptype') ?>
+    <select class="custom-select mr-sm-2" name="iptype">
+    <option value="">- Options -</option>
+    <option value="Static">Static</option>
+    <option value="DHCP">DHCP</option>
+    </select>
+    </div>
+
+
      <div class="form-group col-md-4">
        <?= form_label('IP Address :', 'q') ?>
           <?= form_input('q', '', ['class' => 'form-control']) ?>
@@ -163,15 +175,15 @@
           <?= form_label('Netmask :', 'r') ?>
             <?= form_input('r', '', ['class' => 'form-control']) ?>
               </div>
-            <!-- GATEWAY -->
-              <div class="form-group col-md-4">
-               <?= form_label('Gateway :', 's') ?>
-                 <?= form_input('s', '', ['class' => 'form-control']) ?>
-                   </div>
-                    </div>
+                </div>
 
-<!-- DNS SERVER -->
   <div class="form-row">
+  <!-- GATEWAY -->
+    <div class="form-group col-md-4">
+     <?= form_label('Gateway :', 's') ?>
+       <?= form_input('s', '', ['class' => 'form-control']) ?>
+         </div>
+  <!-- DNS SERVER -->
      <div class="form-group col-md-4">
        <?= form_label('DNS Server :', 't') ?>
           <?= form_input('t', '', ['class' => 'form-control']) ?>
@@ -181,21 +193,21 @@
           <?= form_label('MAC Address :', 'u') ?>
             <?= form_input('u', '', ['class' => 'form-control']) ?>
               </div>
-            <!-- PLATFORM -->
-              <div class="form-group col-md-4">
-                <?= form_label('Platform :', 'v') ?>
-                   <select class="custom-select mr-sm-2" name="v">
-                    <option value="">- Options -</option>
-                    <option value="Linux">Linux</option>
-                    <option value="Windows">Windows</option>
-                    <option value="Macos">Mac OS</option>
-                    <option value="Other">Other</option>
-                  </select>
                 </div>
-             </div>
 
 
 <div class="form-row">
+  <!-- PLATFORM -->
+    <div class="form-group col-md-4">
+    <?= form_label('Platform :', 'v') ?>
+    <select class="custom-select mr-sm-2" name="v">
+    <option value="">- Options -</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="Macos">Mac OS</option>
+    <option value="Other">Other</option>
+    </select>
+    </div>
 <!-- OS NAME -->
     <div class="form-group col-md-4">
      <?= form_label('OS Name :', 'w') ?>
@@ -206,14 +218,14 @@
           <?= form_label('Software :', 'x') ?>
             <?= form_input('x', '', ['class' => 'form-control']) ?>
               </div>
-            <!-- ACQUISITION  -->
-              <div class="form-group col-md-4">
-                <?= form_label('Acquisition :', 'y') ?>
-                   <?= form_input('y', '', ['class' => 'form-control']) ?>
-                    </div>
-                      </div>
+                </div>
 
  <div class="form-row">
+  <!-- ACQUISITION  -->
+    <div class="form-group col-md-4">
+      <?= form_label('Acquisition :', 'y') ?>
+         <?= form_input('y', '', ['class' => 'form-control']) ?>
+          </div>
     <!-- CODEFICATIONS -->
       <div class="form-group col-md-4">
        <?= form_label('Codefications :', 'z') ?>
@@ -229,31 +241,36 @@
                <option value="Absence">Absence</option>
                <option value="Laboratorium">Laboratorium</option>
                <option value="Server">Server</option>
-             </select>
-                </div>
-              <!-- ACTIVE -->
-                <div class="form-group col-md-4">
-                  <?= form_label('Status', 'act') ?>
-                   <div class="col-sm-10">
-                   <div class="custom-control custom-radio custom-control-inline">
-                   <input type="radio" value="Y" id="Y" name="act" class="custom-control-input">
-                   <?= form_label('Active', 'Y', ['class' => 'custom-control-label']) ?>
-                   </div>
-                   <div class="custom-control custom-radio custom-control-inline">
-                   <input type="radio" value="N" id="N" name="act" class="custom-control-input">
-                   <?= form_label('Non Active', 'N', ['class' => 'custom-control-label']) ?>
-                 </div>
-                </div>
-               </div>
-             </div>
+              </select>
+            </div>
+          </div>
 
 <div class="form-row">
-    <!-- DESCRIPTIONS -->
-      <div class="form-group col-md-8">
-        <?= form_label('Descriptions :', 'desc') ?>
-          <textarea class="form-control" name="desc"></textarea>
-             </div>
-                </div>
+  <!-- ANTIVIRUS -->
+   <div class="form-group col-md-4">
+    <?= form_label('Antivirus:', 'antivirus') ?>
+      <?= form_input('antivirus', '', ['class' => 'form-control']) ?>
+        </div>
+        <!-- ACTIVE -->
+          <div class="form-group col-md-4">
+            <?= form_label('Status PC', 'act') ?>
+            <div class="col-sm-10">
+            <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" value="Y" id="Y" name="act" class="custom-control-input">
+            <?= form_label('Active', 'Y', ['class' => 'custom-control-label']) ?>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" value="N" id="N" name="act" class="custom-control-input">
+            <?= form_label('Non Active', 'N', ['class' => 'custom-control-label']) ?>
+            </div>
+            </div>
+          </div>
+  <!-- DESCRIPTIONS -->
+    <div class="form-group col-md-4">
+      <?= form_label('Descriptions :', 'desc') ?>
+        <textarea class="form-control" name="desc"></textarea>
+           </div>
+              </div>
 
 </div><!--end card-body-->
 </div><!--end shadow-->
@@ -273,12 +290,11 @@
 
   <div class="card text-white bg-dark">
     <div class="card-body">
-      <h6 class="card-title"><strong>New Release A1 </strong></h6>
+      <h6 class="card-title"><strong>New Release OPIT Version - 4.1 </strong></h6>
       <p class="card-text">You can see documentation on button link bellow..</p>
       <a target="_blank" href="https://ariansyah.net/it-operations" class="btn btn-info"><i class="fas fa-book"></i> View Docs</a>
     </div>
   </div>
-
 
 </div><!--end card-body-->
 </div><!--end collapse-->
@@ -288,12 +304,8 @@
 
 </div>
 
-
-
 <!-- ====================ACTION========================== -->
-
 <div class="card mb-4">
-
 <!--BUTTON-->
     <div class="form-group row">
     <?= form_label('', '', ['class' => 'col-sm-2 col-form-label']) ?>
@@ -302,6 +314,5 @@
     <i class='fas fa-save'></i> Save Data</button>
     </div>
     </div>
-
 </div>
 <?= form_close() ?>

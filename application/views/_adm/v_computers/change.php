@@ -115,25 +115,24 @@
                   </div>
                     </div>
 
-<!--
-PRINTER
+<!-- PRINTER -->
 <div class="form-row">
  <div class="form-group col-md-4">
    <?= form_label('Printer :', 'o') ?>
     <?= form_input('o', $ar['printer'], ['class' => 'form-control']) ?>
       </div>
-      SCANNER
+      <!-- SCANNER -->
          <div class="form-group col-md-4">
           <?= form_label('Scanner :', 'p') ?>
             <?= form_input('p', $ar['scanner'], ['class' => 'form-control']) ?>
               </div>
-            UPS
+            <!-- UPS -->
               <div class="form-group col-md-4">
                <?= form_label('U P S :', 'ups') ?>
                  <?= form_input('ups', '', ['class' => 'form-control']) ?>
                    </div>
                      </div>
-                      -->
+                      
 
     </div><!--end card-body-->
   </div><!--end collapse-->
@@ -154,8 +153,20 @@ PRINTER
   <div class="card-body">
 
 
-<!-- IP ADDRESS -->
+
   <div class="form-row">
+
+    <!-- IP TYPE -->
+    <div class="form-group col-md-4">
+    <?= form_label('IP Type :', 'iptype') ?>
+    <select class="custom-select mr-sm-2" name="iptype">
+    <option><?=$ar['ip_type']?></option>
+     <option value="Static">Static</option>
+    <option value="DHCP">DHCP</option>
+    </select>
+    </div>
+
+<!-- IP ADDRESS -->
      <div class="form-group col-md-4">
        <?= form_label('IP Address :', 'q') ?>
           <?= form_input('q', $ar['ipaddress'], ['class' => 'form-control']) ?>
@@ -165,59 +176,63 @@ PRINTER
           <?= form_label('Netmask :', 'r') ?>
             <?= form_input('r', $ar['netmask'], ['class' => 'form-control']) ?>
               </div>
-            <!-- GATEWAY -->
-              <div class="form-group col-md-4">
-               <?= form_label('Gateway :', 's') ?>
-                 <?= form_input('s', $ar['gateway'], ['class' => 'form-control']) ?>
-                   </div>
-                    </div>
+                </div>
 
-<!-- DNS SERVER -->
-  <div class="form-row">
+<div class="form-row">
+  <!-- GATEWAY -->
+    <div class="form-group col-md-4">
+     <?= form_label('Gateway :', 's') ?>
+       <?= form_input('s', $ar['gateway'], ['class' => 'form-control']) ?>
+         </div>
+
+    <!-- DNS SERVER -->
      <div class="form-group col-md-4">
        <?= form_label('DNS Server :', 't') ?>
           <?= form_input('t', $ar['dnsserver'], ['class' => 'form-control']) ?>
            </div>
+
        <!-- MAC ADDRESS -->
          <div class="form-group col-md-4">
           <?= form_label('MAC Address :', 'u') ?>
             <?= form_input('u', $ar['macaddress'], ['class' => 'form-control']) ?>
               </div>
-            <!-- PLATFORM -->
-              <div class="form-group col-md-4">
-                <?= form_label('Platform :', 'v') ?>
-                   <select class="custom-select mr-sm-2" name="v">
-                    <option><?=$ar['platform']?></option>
-                    <option value="Linux">Linux</option>
-                    <option value="Windows">Windows</option>
-                    <option value="Macos">Mac OS</option>
-                    <option value="Other">Other</option>
-                  </select>
                 </div>
-             </div>
 
 
 
  <div class="form-row">
-      <!-- OS NAME -->
-        <div class="form-group col-md-4">
-         <?= form_label('OS Name :', 'w') ?>
-           <?= form_input('w', $ar['osname'], ['class' => 'form-control']) ?>
-             </div>
-           <!-- SOFTWARE -->
-             <div class="form-group col-md-4">
-              <?= form_label('Software :', 'x') ?>
-                <?= form_input('x', $ar['software'], ['class' => 'form-control']) ?>
+  <!-- PLATFORM -->
+    <div class="form-group col-md-4">
+    <?= form_label('Platform :', 'v') ?>
+    <select class="custom-select mr-sm-2" name="v">
+    <option><?=$ar['platform']?></option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="Macos">Mac OS</option>
+    <option value="Other">Other</option>
+    </select>
+    </div>
+
+    <!-- OS NAME -->
+      <div class="form-group col-md-4">
+       <?= form_label('OS Name :', 'w') ?>
+         <?= form_input('w', $ar['osname'], ['class' => 'form-control']) ?>
+           </div>
+         <!-- SOFTWARE -->
+           <div class="form-group col-md-4">
+            <?= form_label('Software :', 'x') ?>
+              <?= form_input('x', $ar['software'], ['class' => 'form-control']) ?>
+                </div>
                   </div>
-                <!-- ACQUISITION  -->
-                  <div class="form-group col-md-4">
-                    <?= form_label('Acquisition :', 'y') ?>
-                       <?= form_input('y', $ar['acquisition'], ['class' => 'form-control']) ?>
-                        </div>
-                          </div>
 
 
  <div class="form-row">
+
+     <!-- ACQUISITION  -->
+      <div class="form-group col-md-4">
+        <?= form_label('Acquisition :', 'y') ?>
+         <?= form_input('y', $ar['acquisition'], ['class' => 'form-control']) ?>
+          </div>
 
       <!-- CODEFICATIONS -->
         <div class="form-group col-md-4">
@@ -227,40 +242,46 @@ PRINTER
            <!-- COMPUTER TYPE -->
              <div class="form-group col-md-4">
               <?= form_label('Computer Type :', 'ct') ?>
-                <select class="custom-select mr-sm-2" name="ct">
-                 <option><?=$ar['computer_type']?></option>
-                 <option value="Personal">Personal</option>
-                 <option value="Public">Public</option>
-                 <option value="Absence">Absence</option>
-                 <option value="Laboratorium">Laboratorium</option>
-                 <option value="Server">Server</option>
+                  <select class="custom-select mr-sm-2" name="ct">
+                   <option><?=$ar['computer_type']?></option>
+                   <option value="Personal">Personal</option>
+                   <option value="Public">Public</option>
+                   <option value="Absence">Absence</option>
+                   <option value="Laboratorium">Laboratorium</option>
+                   <option value="Server">Server</option>
+                  </select>
+                </div>
+              </div>
 
-               </select>
-                  </div>
-                <!-- ACTIVE STATUS-->
-                <div class="form-group col-md-4">
-                    <?= form_label('Status', 'act') ?>
-                     <div class="col-sm-10">
-                     <div class="custom-control custom-radio custom-control-inline">
-                     <?= form_radio(['class'=>'custom-control-input','name'=>'act','id'=>'Y'], 'Y', isset($ar['pc_active']) && ($ar['pc_active'] == 'Y') ? true : false) ?>
-                     <?= form_label('Active', 'Y', ['class' => 'custom-control-label']) ?>
-                     </div>
-                     <div class="custom-control custom-radio custom-control-inline">
-                     <?= form_radio(['class'=>'custom-control-input','name'=>'act','id'=>'N'], 'N', isset($ar['pc_active']) && ($ar['pc_active'] == 'N') ? true : false) ?>
-                     <?= form_label('Non Active', 'N', ['class' => 'custom-control-label']) ?>
-                   </div>
-                  </div>
-                 </div>
-
-               </div>
-
-<!-- DESCRIPTIONS -->
 <div class="form-row">
-  <div class="form-group col-md-8">
-    <?= form_label('Descriptions :', 'desc') ?>
+
+  <!-- ANTIVIRUS -->
+      <div class="form-group col-md-4">
+      <?= form_label('Antivirus:', 'antivirus') ?>
+      <?= form_input('antivirus', $ar['antivirus'], ['class' => 'form-control']) ?>
+      </div>
+
+<!-- ACTIVE STATUS-->
+      <div class="form-group col-md-4">
+      <?= form_label('Status', 'act') ?>
+      <div class="col-sm-10">
+      <div class="custom-control custom-radio custom-control-inline">
+      <?= form_radio(['class'=>'custom-control-input','name'=>'act','id'=>'Y'], 'Y', isset($ar['pc_active']) && ($ar['pc_active'] == 'Y') ? true : false) ?>
+      <?= form_label('Active', 'Y', ['class' => 'custom-control-label']) ?>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+      <?= form_radio(['class'=>'custom-control-input','name'=>'act','id'=>'N'], 'N', isset($ar['pc_active']) && ($ar['pc_active'] == 'N') ? true : false) ?>
+      <?= form_label('Non Active', 'N', ['class' => 'custom-control-label']) ?>
+      </div>
+      </div>
+      </div>
+
+<!-- DESCRIPTIONS -->       
+      <div class="form-group col-md-4">
+      <?= form_label('Descriptions :', 'desc') ?>
       <textarea class="form-control" rows="2" name="desc"><?= $ar['description'] ?></textarea>
-        </div>
-          </div>
+      </div>
+      </div>
 
 </div><!--end card-body-->
 </div><!--end shadow-->
@@ -280,12 +301,11 @@ PRINTER
 
   <div class="card text-white bg-dark">
     <div class="card-body">
-      <h6 class="card-title"><strong>New Release A1 </strong></h6>
-      <p class="card-text">You can see documentation on button link bellow..</p>
+      <h6 class="card-title"><strong>New Release OPIT Version - 4.1 </strong></h6>
+      <p class="card-text">You can see documentation on button link bellow.</p>
       <a target="_blank" href="https://ariansyah.net/it-operations" class="btn btn-info"><i class="fas fa-book"></i> View Docs</a>
     </div>
   </div>
-
 
 </div><!--end card-body-->
 </div><!--end collapse-->
@@ -295,12 +315,8 @@ PRINTER
 
 </div>
 
-
-
 <!-- ====================ACTION========================== -->
-
 <div class="card mb-4">
-
 <!--BUTTON-->
     <div class="form-group row">
     <?= form_label('', '', ['class' => 'col-sm-2 col-form-label']) ?>
@@ -309,6 +325,5 @@ PRINTER
     <i class='fas fa-save'></i> Save Data</button>
     </div>
     </div>
-
 </div>
 <?= form_close() ?>

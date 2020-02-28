@@ -258,9 +258,10 @@
                       'lancard'         => $this->db->escape_str($this->input->post('l')),
                       'fan'             => $this->db->escape_str($this->input->post('m')),
                       'powersupply'     => $this->db->escape_str($this->input->post('n')),
-                      // 'printer'         => $this->db->escape_str($this->input->post('o')),
-                      // 'scanner'         => $this->db->escape_str($this->input->post('p')),
-                      // 'ups'             => $this->db->escape_str($this->input->post('ups')),
+                      'printer'         => $this->db->escape_str($this->input->post('o')),
+                      'scanner'         => $this->db->escape_str($this->input->post('p')),
+                      'ups'             => $this->db->escape_str($this->input->post('ups')),
+                      'ip_type'         => $this->db->escape_str($this->input->post('iptype')),
                       'ipaddress'       => $this->db->escape_str($this->input->post('q')),
                       'netmask'         => $this->db->escape_str($this->input->post('r')),
                       'gateway'         => $this->db->escape_str($this->input->post('s')),
@@ -273,7 +274,9 @@
                       'codefication'    => $this->db->escape_str($this->input->post('z')),
                       'computer_type'   => $this->db->escape_str($this->input->post('ct')),
                       'pc_active'       => $this->db->escape_str($this->input->post('act')),
+                      'antivirus'       => $this->db->escape_str($this->input->post('antivirus')),
                       'description'     => $this->db->escape_str($this->input->post('desc')),
+                      'on_changed'      => 0,
                       'last_update'     => date('Y-m-d h:i:s')
                       );
       $this->db->insert('it_computers',$datadb);
@@ -297,9 +300,10 @@
                       'lancard'         => $this->db->escape_str($this->input->post('l')),
                       'fan'             => $this->db->escape_str($this->input->post('m')),
                       'powersupply'     => $this->db->escape_str($this->input->post('n')),
-                      // 'printer'         => $this->db->escape_str($this->input->post('o')),
-                      // 'scanner'         => $this->db->escape_str($this->input->post('p')),
-                      // 'ups'             => $this->db->escape_str($this->input->post('ups')),
+                      'printer'         => $this->db->escape_str($this->input->post('o')),
+                      'scanner'         => $this->db->escape_str($this->input->post('p')),
+                      'ups'             => $this->db->escape_str($this->input->post('ups')),
+                      'ip_type'         => $this->db->escape_str($this->input->post('iptype')),
                       'ipaddress'       => $this->db->escape_str($this->input->post('q')),
                       'netmask'         => $this->db->escape_str($this->input->post('r')),
                       'gateway'         => $this->db->escape_str($this->input->post('s')),
@@ -312,7 +316,9 @@
                       'codefication'    => $this->db->escape_str($this->input->post('z')),
                       'computer_type'   => $this->db->escape_str($this->input->post('ct')),
                       'pc_active'       => $this->db->escape_str($this->input->post('act')),
+                      'antivirus'       => $this->db->escape_str($this->input->post('antivirus')),
                       'description'     => $this->db->escape_str($this->input->post('desc')),
+                      'on_changed'      => 0,
                       'last_update'     => date('Y-m-d h:i:s')
                       );
         $this->db->where('id_computers',$this->input->post('id'));
