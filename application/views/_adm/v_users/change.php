@@ -203,14 +203,14 @@
 
 
     <div class="form-group row">
-    <?= form_label('Username', 'username', ['class' => 'col-sm-2 col-form-label', 'readonly'=>'readonly']) ?>
+    <?= form_label('Email', 'email', ['class' => 'col-sm-2 col-form-label', 'readonly'=>'readonly']) ?>
     <div class="col-sm-5">
-    <?= form_input('n', $rows['username'], ['class' => 'form-control', 'required' => 'required']) ?>
+    <?= form_input('n', $rows['email'], ['class' => 'form-control', 'required' => 'required']) ?>
     </div>
     </div>
 
     <div class="form-group row">
-    <?= form_label('Password', 'username', ['class' => 'col-sm-2 col-form-label']) ?>
+    <?= form_label('Password', 'password', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
     <?= form_password('o', $rows['password'], ['class' => 'form-control', 'required' => 'required']) ?>
     </div>
