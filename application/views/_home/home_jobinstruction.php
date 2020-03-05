@@ -30,7 +30,7 @@ di lingkungan FFUP.
     <a href="page/<?= $row->page_slug ?>"><h4 class="font-weight-bold mb-3"><strong><?= $row->page_title ?></strong></h4></a>
       <p class="grey-text"><?= $row->page_content ?></p>
         <p class="text-muted">Ditulis oleh : <i class="far fa-user-circle"></i> <?= $row->first_name ?>, <?= $row->last_name ?> &nbsp; <i class="far fa-calendar-plus"></i> <?= tgl_indo($row->page_created);?> </p>
-          <a href="<?= $row->page_slug ?>" class="btn btn-primary btn-md">Selengkapnya <i class="fas fa-angle-double-right ml-1"></i></a>
+          <a href="page/<?= $row->page_slug ?>" class="btn btn-primary btn-md">Selengkapnya <i class="fas fa-angle-double-right ml-1"></i></a>
             </div><!-- Grid column -->
               </div><!-- Grid row -->
                 <hr class="my-5">
