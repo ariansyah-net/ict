@@ -5,8 +5,7 @@
 <div class="collapse show" id="collapseCard">
 <div class="card-body">
 
-<?= form_open('dashboard/add_page') ?>
-
+<?= form_open_multipart('dashboard/add_page') ?>
 
 <!-- PAGE TITLE -->
     <div class="form-group row">
@@ -28,7 +27,7 @@
     <div class="form-group row">
     <?= form_label('Categories', 'id_categories', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
-    <?= form_dropdown('f', getDropdownList('it_categories', ['id_categories', 'cate_name']), set_value('f'), array('class' => 'custom-select mr-sm-2','required'=>'required')) ?>
+    <?= form_dropdown('c', getDropdownList('it_categories', ['id_categories', 'cate_name']), set_value('c'), array('class' => 'custom-select mr-sm-2','required'=>'required')) ?>
     </div>
     <div class="col-sm-1">
     <a class="text-secondary" target="blank" title="add new categories" href="<?=base_url('dashboard/categories')?>">
@@ -40,7 +39,7 @@
     <div class="form-group row">
     <?= form_label('Tags', 'tag', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
-    <select multiple="multiple" class="multiselect form-control" name="e[]">
+    <select multiple="multiple" class="multiselect form-control" name="d[]">
     <?php foreach ($tags as $r): ?>
     <option value="<?=$r->tag_name?>"><?= $r->tag_name ?></option>
     <?php endforeach; ?>
@@ -58,21 +57,34 @@
     <?= form_label('Page Status', 'page_active', ['class' => 'col-sm-2 col-from-label']) ?>
     <div class="col-sm-10">
     <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" value="1" id="1" name="c" class="custom-control-input" required>
+    <input type="radio" value="1" id="1" name="e" class="custom-control-input" required>
     <?= form_label('Active', '1', ['class' => 'custom-control-label']) ?>
     </div>
     <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" value="0" id="0" name="c" class="custom-control-input" required>
+    <input type="radio" value="0" id="0" name="e" class="custom-control-input" required>
     <?= form_label('Non Active', '0', ['class' => 'custom-control-label']) ?>
     </div>
     </div>
     </div>
 
-<!-- PAGE -->
+
+<!-- PAGE IMAGE -->
+    <div class="form-group row">
+    <?= form_label('Image', 'image', ['class' => 'col-sm-2 col-form-label']) ?>
+    <div class="col-sm-6">
+    <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFile" name="f">
+    <?= form_label('Choose file..', 'f', ['class' => 'custom-file-label', 'id' => 'customFile']) ?>
+    <small class="form-text text-muted">Max 2mb file to upload</small>
+    </div>
+    </div>
+    </div>
+
+<!-- PAGE HITS -->
     <div class="form-group row">
     <?= form_label('Page Hits', 'page_hits', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-3">
-    <?= form_input('d', '', ['class' => 'form-control']) ?>
+    <?= form_input('g', '', ['class' => 'form-control']) ?>
     </div>
     </div>
 

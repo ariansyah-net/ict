@@ -675,42 +675,132 @@
   }
 
   function insert_page(){
+    $config['upload_path']    = 'arians/media/post/';
+    $config['allowed_types']  = 'swg|gif|jpg|png|jpeg|GIF|JPG|PNG|JPEG';
+    $config['max_size']       = '2028'; //kb
+    $config['encrypt_name']   = true;
+    $this->load->library('upload', $config);
+    $this->upload->do_upload('f');
+    $hasil=$this->upload->data();
+
     $datadb1 = array();
-    foreach ($_POST['e'] as $tag) {
+    foreach ($_POST['d'] as $tag) {
       array_push($datadb1, $tag);
     }
     $tag = serialize($datadb1);
-    $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
+
+        if ($hasil['file_name']==''){
+                  $datadb = array(
+                    'page_title'    => $this->db->escape_str($this->input->post('a')),
                     'page_slug'     => slug($this->input->post('a')),
                     'page_content'  => $this->input->post('b'),
                     'id_users'      => $this->session->userdata('id_users'),
-                    'page_active'   => $this->db->escape_str($this->input->post('c')),
-                    'page_hits'     => $this->db->escape_str($this->input->post('d')),
+                    'id_categories' => $this->db->escape_str($this->input->post('c')),
                     'tag'           => $tag,
-                    'id_categories' => $this->db->escape_str($this->input->post('f')),
+                    'page_active'   => $this->db->escape_str($this->input->post('e')),
+                    'page_hits'     => $this->db->escape_str($this->input->post('g')),
                     'page_created'  => date("Y-m-d")
                     );
+        
+        }else{
+                  $datadb = array(
+                    'page_title'    => $this->db->escape_str($this->input->post('a')),
+                    'page_slug'     => slug($this->input->post('a')),
+                    'page_content'  => $this->input->post('b'),
+                    'id_users'      => $this->session->userdata('id_users'),
+                    'id_categories' => $this->db->escape_str($this->input->post('c')),
+                    'tag'           => $tag,
+                    'page_active'   => $this->db->escape_str($this->input->post('e')),
+                    'page_img'      => $hasil['file_name'],
+                    'page_hits'     => $this->db->escape_str($this->input->post('g')),
+                    'page_created'  => date("Y-m-d")
+                    );
+
+        }
     $this->db->insert('it_pages',$datadb);
+
+    // $datadb1 = array();
+    // foreach ($_POST['e'] as $tag) {
+    //   array_push($datadb1, $tag);
+    // }
+    // $tag = serialize($datadb1);
+    // $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
+    //                 'page_slug'     => slug($this->input->post('a')),
+    //                 'page_content'  => $this->input->post('b'),
+    //                 'id_users'      => $this->session->userdata('id_users'),
+    //                 'page_active'   => $this->db->escape_str($this->input->post('c')),
+    //                 'page_hits'     => $this->db->escape_str($this->input->post('d')),
+    //                 'tag'           => $tag,
+    //                 'id_categories' => $this->db->escape_str($this->input->post('f')),
+    //                 'page_created'  => date("Y-m-d")
+    //                 );
+    // $this->db->insert('it_pages',$datadb);
   }
+
+
   function change_page($id){
     return $this->db->query("SELECT * FROM it_pages WHERE id_page='$id'");
   }
   function update_page(){
+    // $datadb1 = array();
+    // foreach ($_POST['d'] as $tag) {
+    //   array_push($datadb1, $tag);
+    // }
+    // $tag = serialize($datadb1);
+
+    // $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
+    //                 'page_slug'     => slug($this->input->post('a')),
+    //                 'page_content'  => $this->input->post('b'),
+    //                 'id_users'      => $this->session->userdata('id_users'),
+    //                 'page_active'   => $this->db->escape_str($this->input->post('c')),
+    //                 'page_hits'     => $this->db->escape_str($this->input->post('d')),
+    //                 'tag'           => $tag,
+    //                 'id_categories' => $this->db->escape_str($this->input->post('f')),
+    //                 'page_created'  => date("Y-m-d")
+    //                 );
+
+    $config['upload_path']    = 'arians/media/post/';
+    $config['allowed_types']  = 'swg|gif|jpg|png|jpeg|GIF|JPG|PNG|JPEG';
+    $config['max_size']       = '2028'; //kb
+    $config['encrypt_name']   = true;
+    $this->load->library('upload', $config);
+    $this->upload->do_upload('f');
+    $hasil=$this->upload->data();
+
     $datadb1 = array();
-    foreach ($_POST['e'] as $tag) {
+    foreach ($_POST['d'] as $tag) {
       array_push($datadb1, $tag);
     }
     $tag = serialize($datadb1);
-    $datadb = array('page_title'    => $this->db->escape_str($this->input->post('a')),
+
+        if ($hasil['file_name']==''){
+                  $datadb = array(
+                    'page_title'    => $this->db->escape_str($this->input->post('a')),
                     'page_slug'     => slug($this->input->post('a')),
                     'page_content'  => $this->input->post('b'),
                     'id_users'      => $this->session->userdata('id_users'),
-                    'page_active'   => $this->db->escape_str($this->input->post('c')),
-                    'page_hits'     => $this->db->escape_str($this->input->post('d')),
+                    'id_categories' => $this->db->escape_str($this->input->post('c')),
                     'tag'           => $tag,
-                    'id_categories' => $this->db->escape_str($this->input->post('f')),
+                    'page_active'   => $this->db->escape_str($this->input->post('e')),
+                    'page_hits'     => $this->db->escape_str($this->input->post('g')),
                     'page_created'  => date("Y-m-d")
                     );
+        
+        }else{
+                  $datadb = array(
+                    'page_title'    => $this->db->escape_str($this->input->post('a')),
+                    'page_slug'     => slug($this->input->post('a')),
+                    'page_content'  => $this->input->post('b'),
+                    'id_users'      => $this->session->userdata('id_users'),
+                    'id_categories' => $this->db->escape_str($this->input->post('c')),
+                    'tag'           => $tag,
+                    'page_active'   => $this->db->escape_str($this->input->post('e')),
+                    'page_img'      => $hasil['file_name'],
+                    'page_hits'     => $this->db->escape_str($this->input->post('g')),
+                    'page_created'  => date("Y-m-d")
+                    );
+
+        }
     $this->db->where('id_page',$this->input->post('id'));
     $this->db->update('it_pages',$datadb);
   }
