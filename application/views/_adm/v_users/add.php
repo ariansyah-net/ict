@@ -42,6 +42,13 @@
     <?= form_input('c', '', ['class' => 'form-control']) ?>
     </div>
     </div>
+<!-- PASSWORD -->
+    <div class="form-group row">
+    <?= form_label('Password', 'password', ['class' => 'col-sm-2 col-form-label']) ?>
+    <div class="col-sm-5">
+    <?= form_password('pw', '', ['class' => 'form-control']) ?>
+    </div>
+    </div>
 <!-- PHONE -->
     <div class="form-group row">
     <?= form_label('Phone :', 'phone', ['class' => 'col-sm-2 col-form-label']) ?>
@@ -105,21 +112,21 @@
     <div class="form-group row">
     <?= form_label('Fieldwork :', 'fieldwork', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
-    <?= form_dropdown('h', getDropdownList('it_fieldwork', ['id_fieldwork', 'fieldwork_name']),'', array('class' => 'form-control', 'required' => 'required')) ?>
+    <?= form_dropdown('h', getDropdownList('it_fieldwork', ['id_fieldwork', 'fieldwork_name']),'', array('class' => 'custom-select', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- LOCATION -->
     <div class="form-group row">
     <?= form_label('Location :', 'location', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
-    <?= form_dropdown('i', getDropdownList('it_locations', ['id_locations', 'locations_name']),'', array('class' => 'form-control', 'required' => 'required')) ?>
+    <?= form_dropdown('i', getDropdownList('it_locations', ['id_locations', 'locations_name']),'', array('class' => 'custom-select', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- ROOM -->
     <div class="form-group row">
     <?= form_label('Room :', 'id_room', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
-    <?= form_dropdown('j', getDropdownList('it_rooms', ['id_room', 'room_name']),'', array('class' => 'form-control', 'required' => 'required')) ?>
+    <?= form_dropdown('j', getDropdownList('it_rooms', ['id_room', 'room_name']),'', array('class' => 'custom-select', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- ACTIVE -->

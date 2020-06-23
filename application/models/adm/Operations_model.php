@@ -29,6 +29,7 @@
                     $datadb = array('first_name'      =>$this->db->escape_str($this->input->post('a')),
                                     'last_name'       =>$this->db->escape_str($this->input->post('b')),
                                     'email'           =>$this->db->escape_str($this->input->post('c')),
+                                    'password'        =>password_hash($this->input->post('pw'), PASSWORD_DEFAULT),
                                     'phone'           =>$this->db->escape_str($this->input->post('d')),
                                     'gender'          =>$this->db->escape_str($this->input->post('e')),
                                   // 'avatar'         =>$hasil['file_name'] is none if null file_name
@@ -46,6 +47,7 @@
                     $datadb = array('first_name'      =>$this->db->escape_str($this->input->post('a')),
                                     'last_name'       =>$this->db->escape_str($this->input->post('b')),
                                     'email'           =>$this->db->escape_str($this->input->post('c')),
+                                    'password'        =>password_hash($this->input->post('pw'), PASSWORD_DEFAULT),
                                     'phone'           =>$this->db->escape_str($this->input->post('d')),
                                     'gender'          =>$this->db->escape_str($this->input->post('e')),
                                     'avatar'          =>$hasil['file_name'],
@@ -78,6 +80,7 @@
                     $datadb = array('first_name'      =>$this->db->escape_str($this->input->post('a')),
                                     'last_name'       =>$this->db->escape_str($this->input->post('b')),
                                     'email'           =>$this->db->escape_str($this->input->post('c')),
+                                    'password'        =>password_hash($this->input->post('pw'), PASSWORD_DEFAULT),
                                     'phone'           =>$this->db->escape_str($this->input->post('d')),
                                     'gender'          =>$this->db->escape_str($this->input->post('e')),
                                   // 'avatar'         =>$hasil['file_name'] is none if null file_name
@@ -88,8 +91,7 @@
                                     'is_active'       =>$this->db->escape_str($this->input->post('k')),
                                     'info'            =>$this->db->escape_str($this->input->post('l')),
                                     'unique_user'     =>$this->db->escape_str($this->input->post('m')),
-                                    'username'        =>$this->db->escape_str($this->input->post('n')),
-                                    'password'        =>password_hash($this->input->post('o'), PASSWORD_DEFAULT),
+                                    // 'username'        =>$this->db->escape_str($this->input->post('n')),
                                     'role_id'         =>2,
                                     'date_created'    =>time(),
                                     'last_update'     =>date('Y-m-d H:i:s')
@@ -98,6 +100,7 @@
                     $datadb = array('first_name'      =>$this->db->escape_str($this->input->post('a')),
                                     'last_name'       =>$this->db->escape_str($this->input->post('b')),
                                     'email'           =>$this->db->escape_str($this->input->post('c')),
+                                    'password'        =>password_hash($this->input->post('o'), PASSWORD_DEFAULT),
                                     'phone'           =>$this->db->escape_str($this->input->post('d')),
                                     'gender'          =>$this->db->escape_str($this->input->post('e')),
                                     'avatar'          =>$hasil['file_name'],
@@ -108,8 +111,6 @@
                                     'is_active'       =>$this->db->escape_str($this->input->post('k')),
                                     'info'            =>$this->db->escape_str($this->input->post('l')),
                                     'unique_user'     =>$this->db->escape_str($this->input->post('m')),
-                                    'username'        =>$this->db->escape_str($this->input->post('n')),
-                                    'password'        =>password_hash($this->input->post('o'), PASSWORD_DEFAULT),
                                     'role_id'         =>2,
                                     'date_created'    =>time(),
                                     'last_update'     =>date('Y-m-d H:i:s')

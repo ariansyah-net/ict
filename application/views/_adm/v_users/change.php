@@ -46,6 +46,15 @@
     <?= form_input('c', $rows['email'], ['class' => 'form-control']) ?>
     </div>
     </div>
+
+<!-- PASSWORD -->
+    <div class="form-group row">
+    <?= form_label('Password', 'password', ['class' => 'col-sm-2 col-form-label']) ?>
+    <div class="col-sm-5">
+    <?= form_password('pw', $rows['password'], ['class' => 'form-control']) ?>
+    </div>
+    </div>
+
 <!-- PHONE -->
     <div class="form-group row">
     <?= form_label('Phone', 'phone', ['class' => 'col-sm-2 col-form-label']) ?>
@@ -122,21 +131,21 @@
     <div class="form-group row">
     <?= form_label('Fieldwork :', 'fieldwork', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
-    <?= form_dropdown('h', getDropdownList('it_fieldwork', ['id_fieldwork', 'fieldwork_name']), $rows['id_fieldwork'], array('class' => 'form-control', 'required' => 'required')) ?>
+    <?= form_dropdown('h', getDropdownList('it_fieldwork', ['id_fieldwork', 'fieldwork_name']), $rows['id_fieldwork'], array('class' => 'custom-select', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- LOCATION -->
     <div class="form-group row">
     <?= form_label('Location', 'location', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
-    <?= form_dropdown('i', getDropdownList('it_locations', ['id_locations', 'locations_name']), $rows['id_locations'], array('class' => 'form-control', 'required' => 'required')) ?>
+    <?= form_dropdown('i', getDropdownList('it_locations', ['id_locations', 'locations_name']), $rows['id_locations'], array('class' => 'custom-select', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- ROOM -->
     <div class="form-group row">
     <?= form_label('Room', 'id_room', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-7">
-    <?= form_dropdown('j', getDropdownList('it_rooms', ['id_room', 'room_name']), $rows['id_room'], array('class' => 'form-control', 'required' => 'required')) ?>
+    <?= form_dropdown('j', getDropdownList('it_rooms', ['id_room', 'room_name']), $rows['id_room'], array('class' => 'custom-select', 'required' => 'required')) ?>
     </div>
     </div>
 <!-- ACTIVE -->
@@ -196,30 +205,11 @@
 
   <div class="card text-white bg-dark">
     <div class="card-body">
-      <h6 class="card-title"><strong>Caution, this function is still in the development stage!</strong></h6>
-      <p class="card-text text-warning">You can set this user to be able to log in to the application as an admin or as a user.</p>
-      <!-- <a target="_blank" href="https://ariansyah.net/it-operations" class="btn btn-info"><i class="fas fa-book"></i> View Docs</a> -->
-    <hr>
-
-
-    <div class="form-group row">
-    <?= form_label('Email', 'email', ['class' => 'col-sm-2 col-form-label', 'readonly'=>'readonly']) ?>
-    <div class="col-sm-5">
-    <?= form_input('n', $rows['email'], ['class' => 'form-control']) ?>
-    </div>
-    </div>
-
-    <div class="form-group row">
-    <?= form_label('Password', 'password', ['class' => 'col-sm-2 col-form-label']) ?>
-    <div class="col-sm-5">
-    <?= form_password('o', $rows['password'], ['class' => 'form-control']) ?>
-    </div>
-    </div>
-
-
+      <h6 class="card-title"><strong>New Release A1 </strong></h6>
+      <p class="card-text">You can see documentation on button link bellow..</p>
+      <a target="_blank" href="https://ariansyah.net/it-operations" class="btn btn-info"><i class="fas fa-book"></i> View Docs</a>
     </div>
   </div>
-
 
 </div><!--end card-body-->
 </div><!--end collapse-->
