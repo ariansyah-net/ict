@@ -15,7 +15,7 @@
 <!-- IN TAB -->
     <div class="card shadow mb-4">
       <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-      <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-edit"></i> Add New User</h6>
+      <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-edit"></i> Change User</h6>
       </a>
     <div class="collapse show" id="collapseCardExample">
     <div class="card-body">
@@ -205,14 +205,14 @@
     <div class="form-group row">
     <?= form_label('Email', 'email', ['class' => 'col-sm-2 col-form-label', 'readonly'=>'readonly']) ?>
     <div class="col-sm-5">
-    <?= form_input('n', $rows['email'], ['class' => 'form-control', 'required' => 'required']) ?>
+    <?= form_input('n', $rows['email'], ['class' => 'form-control']) ?>
     </div>
     </div>
 
     <div class="form-group row">
     <?= form_label('Password', 'password', ['class' => 'col-sm-2 col-form-label']) ?>
     <div class="col-sm-5">
-    <?= form_password('o', $rows['password'], ['class' => 'form-control', 'required' => 'required']) ?>
+    <?= form_password('o', $rows['password'], ['class' => 'form-control']) ?>
     </div>
     </div>
 
