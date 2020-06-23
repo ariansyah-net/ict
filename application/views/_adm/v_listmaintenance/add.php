@@ -28,7 +28,7 @@
      <?= form_label('<strong><i class="far fa-check-square"></i> Casing</strong>', 'e') ?>
       <div class="col-sm-12">
       <div class="custom-control custom-radio custom-control-inline">
-      <input type="radio" value="Good" id="egood" name="e" class="custom-control-input">
+      <input type="radio" value="Good" id="egood" name="e" class="custom-control-input" checked="checked">
       <?= form_label('Good', 'egood', ['class' => 'custom-control-label']) ?>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
@@ -42,7 +42,7 @@
       <?= form_label('<strong><i class="far fa-check-square"></i> Monitor</strong>', 'f') ?>
        <div class="col-sm-12">
        <div class="custom-control custom-radio custom-control-inline">
-       <input type="radio" value="Good" id="fgood" name="f" class="custom-control-input">
+       <input type="radio" value="Good" id="fgood" name="f" class="custom-control-input" checked="checked">
        <?= form_label('Good', 'fgood', ['class' => 'custom-control-label']) ?>
        </div>
        <div class="custom-control custom-radio custom-control-inline">
@@ -56,7 +56,7 @@
      <?= form_label('<strong><i class="far fa-check-square"></i> Keyboard</strong>', 'g') ?>
       <div class="col-sm-12">
       <div class="custom-control custom-radio custom-control-inline">
-      <input type="radio" value="Good" id="ggood" name="g" class="custom-control-input">
+      <input type="radio" value="Good" id="ggood" name="g" class="custom-control-input" checked="checked">
       <?= form_label('Good', 'ggood', ['class' => 'custom-control-label']) ?>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
@@ -76,7 +76,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Mouse</strong>', 'h') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="hgood" name="h" class="custom-control-input">
+         <input type="radio" value="Good" id="hgood" name="h" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'hgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -90,7 +90,7 @@
          <?= form_label('<strong><i class="far fa-check-square"></i> Mainboard</strong>', 'i') ?>
           <div class="col-sm-12">
           <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" value="Good" id="igood" name="i" class="custom-control-input">
+          <input type="radio" value="Good" id="igood" name="i" class="custom-control-input" checked="checked">
           <?= form_label('Good', 'igood', ['class' => 'custom-control-label']) ?>
           </div>
           <div class="custom-control custom-radio custom-control-inline">
@@ -104,7 +104,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Processor</strong>', 'j') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="jgood" name="j" class="custom-control-input">
+         <input type="radio" value="Good" id="jgood" name="j" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'jgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -124,7 +124,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Hard Drive</strong>', 'k') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="kgood" name="k" class="custom-control-input">
+         <input type="radio" value="Good" id="kgood" name="k" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'kgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -138,7 +138,7 @@
          <?= form_label('<strong><i class="far fa-check-square"></i> R A M</strong>', 'l') ?>
           <div class="col-sm-12">
           <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" value="Good" id="lgood" name="l" class="custom-control-input">
+          <input type="radio" value="Good" id="lgood" name="l" class="custom-control-input" checked="checked">
           <?= form_label('Good', 'lgood', ['class' => 'custom-control-label']) ?>
           </div>
           <div class="custom-control custom-radio custom-control-inline">
@@ -152,7 +152,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> V G A </strong>', 'm') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="mgood" name="m" class="custom-control-input">
+         <input type="radio" value="Good" id="mgood" name="m" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'mgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -172,7 +172,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> CD-Room</strong>', 'n') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="ngood" name="n" class="custom-control-input">
+         <input type="radio" value="Good" id="ngood" name="n" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'ngood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -186,7 +186,7 @@
          <?= form_label('<strong><i class="far fa-check-square"></i> LAN Card</strong>', 'o') ?>
           <div class="col-sm-12">
           <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" value="Good" id="ogood" name="o" class="custom-control-input">
+          <input type="radio" value="Good" id="ogood" name="o" class="custom-control-input" checked="checked">
           <?= form_label('Good', 'ogood', ['class' => 'custom-control-label']) ?>
           </div>
           <div class="custom-control custom-radio custom-control-inline">
@@ -200,7 +200,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> P A N </strong>', 'p') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="pgood" name="p" class="custom-control-input">
+         <input type="radio" value="Good" id="pgood" name="p" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'pgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -221,7 +221,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Power Supply</strong>', 'q') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="qgood" name="q" class="custom-control-input">
+         <input type="radio" value="Good" id="qgood" name="q" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'qgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -235,7 +235,7 @@
          <?= form_label('<strong><i class="far fa-check-square"></i> Printer</strong>', 'r') ?>
           <div class="col-sm-12">
           <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" value="Good" id="rgood" name="r" class="custom-control-input">
+          <input type="radio" value="Good" id="rgood" name="r" class="custom-control-input" checked="checked">
           <?= form_label('Good', 'rgood', ['class' => 'custom-control-label']) ?>
           </div>
           <div class="custom-control custom-radio custom-control-inline">
@@ -249,7 +249,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Scanner </strong>', 's') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="sgood" name="s" class="custom-control-input">
+         <input type="radio" value="Good" id="sgood" name="s" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'sgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -270,7 +270,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Software</strong>', 't') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Good" id="tgood" name="t" class="custom-control-input">
+         <input type="radio" value="Good" id="tgood" name="t" class="custom-control-input" checked="checked">
          <?= form_label('Good', 'tgood', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
@@ -284,7 +284,7 @@
          <?= form_label('<strong><i class="far fa-check-square"></i> O S</strong>', 'u') ?>
           <div class="col-sm-12">
           <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" value="Good" id="ugood" name="u" class="custom-control-input">
+          <input type="radio" value="Good" id="ugood" name="u" class="custom-control-input" checked="checked">
           <?= form_label('Good', 'ugood', ['class' => 'custom-control-label']) ?>
           </div>
           <div class="custom-control custom-radio custom-control-inline">
@@ -298,7 +298,7 @@
         <?= form_label('<strong><i class="far fa-check-square"></i> Status PC </strong>', 'v') ?>
          <div class="col-sm-12">
          <div class="custom-control custom-radio custom-control-inline">
-         <input type="radio" value="Ok" id="vok" name="v" class="custom-control-input">
+         <input type="radio" value="Ok" id="vok" name="v" class="custom-control-input" checked="checked">
          <?= form_label('Ok', 'vok', ['class' => 'custom-control-label']) ?>
          </div>
          <div class="custom-control custom-radio custom-control-inline">
