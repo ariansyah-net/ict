@@ -12,9 +12,9 @@
 // ================ USERS ==============================
     function load_users(){
       return $this->db->query("SELECT * FROM it_users a
-                                JOIN it_rooms b ON a.id_room=b.id_room
-                                JOIN it_locations c ON a.id_locations=c.id_locations
-                                JOIN it_fieldwork d ON a.id_fieldwork=d.id_fieldwork
+                                LEFT JOIN it_rooms b ON a.id_room=b.id_room
+                                LEFT JOIN it_locations c ON a.id_locations=c.id_locations
+                                LEFT JOIN it_fieldwork d ON a.id_fieldwork=d.id_fieldwork
                                 ORDER BY id_users DESC");
     }
     function insert_users(){
